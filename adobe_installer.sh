@@ -56,7 +56,7 @@ ping_local_web () {
  fi
 }
 
-# Download Adobe DC .zip
+# Download Adobe DC .zip to /Applications
 
 get_acrobat () {
 
@@ -65,7 +65,7 @@ get_acrobat () {
   curl --progress-bar --retry 3 --retry-delay 5 "$ADOBE_ACROBAT" --output /Applications/acrobat.zip
 }
 
-# Unzip acrobat.zip to Applications
+# Unzip acrobat.zip to /Applications
 
 unzip_acrobat () {
 
@@ -87,10 +87,10 @@ install_acrobat () {
 
 confirm_acrobat () {
 
-  if open -Ra "Atom" &> /dev/null; then
-    printf "%s\n" "Atom is installed. Woohoo!"
+  if open -Ra "Adobe Acrobat" &> /dev/null; then
+    printf "%s\n" "Adobe Acrobat is installed."
   else
-    printf "%s\n" "Error: Atom is not installed. Zoinks!" >&2
+    printf "%s\n" "Error: Adobe Acrobat is not installed. Contact your sysadmin." >&2
 fi
 }
 
@@ -100,7 +100,7 @@ remove_zip () {
 
   printf "%s\n" "Removing Acrobat.zip and mac-acrobat-spr18."
 
-  rm -rf acrobat.zip && rm -rf /Applications/mac-acrobatdc-spr18
+  rm -rv /Applications/{acrobat.zip,mac-acrobatdc-spr18}
 }
 
 # Download Adobe Illustrator zip
@@ -125,7 +125,7 @@ main () {
   get_acrobat
   unzip_acrobat
   install_acrobat
-  #confirm_acrobat
+  confirm_acrobat
   remove_zip
 }
 
