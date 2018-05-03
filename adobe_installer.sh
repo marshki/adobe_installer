@@ -1,7 +1,7 @@
 #!/bin/bash
 # mjk235 [at] nyu [dot] edu --2018.04.25
 
-### Adobe installer V.0.1 for OS X. ###
+### Adobe installer v.0.1 for OS X. ###
 
 ADOBE_ACROBAT="http://localweb.cns.nyu.edu/cc-2018-mac/mac-acrobatdc-spr18.zip"
 
@@ -90,7 +90,7 @@ install_acrobat () {
 
 remove_acrobat_zip () {
 
-  printf "%s\n" "Removing acrobat.zip and mac-acrobat-spr18."
+  printf "%s\n" "Removing acrobat.zip and mac-acrobat-spr18..."
 
   rm -rv /Applications/{acrobat.zip,mac-acrobatdc-spr18}
 }
@@ -110,7 +110,7 @@ get_illustrator () {
 
 unzip_illustrator () {
 
-  printf "%s\n" "Unzipping to /Applications..."
+  printf "%s\n" "Unzipping Illustrator to /Applications..."
 
   unzip /Applications/illustrator.zip -d /Applications
 }
@@ -128,7 +128,7 @@ install_illustrator () {
 
 remove_illustrator_zip () {
 
-  printf "%s\n" "Removing illustrator.zip and mac-acrobatdc-spr18."
+  printf "%s\n" "Removing illustrator.zip and mac-illustrator-spr18."
 
   rm -rv /Applications/{illustrator.zip,mac-illustrator-spr18}
 }
@@ -146,7 +146,7 @@ get_photoshop () {
 
 unzip_photoshop () {
 
-  printf "%s\n" "Unzipping to /Applications..."
+  printf "%s\n" "Unzipping Photoshop to /Applications..."
 
   unzip /Applications/photoshop.zip -d /Applications
 }
@@ -157,16 +157,16 @@ install_photoshop () {
 
   printf "%s\n" "Installing Photoshop..."
 
-  installer -pkg /Applications/mac-illustrator-spr18/Build/mac-illustrator-spr18_Install.pkg -target /
+  installer -pkg /Applications/mac-photoshop-spr18/Build/mac-photoshop-spr18_Install.pkg -target /
 }
 
 # Remove Photoshop .zip file and installer.
 
 remove_photoshop_zip () {
 
-  printf "%s\n" "Removing illustrator.zip and mac-acrobatdc-spr18."
+  printf "%s\n" "Removing photoshop.zip and mac-photoshop-spr18."
 
-  rm -rv /Applications/{acrobat.zip,mac-acrobatdc-spr18}
+  rm -rv /Applications/{photoshop.zip,mac-photoshop-spr18}
 }
 
 # Main
@@ -203,15 +203,3 @@ photoshop () {
   remove_photoshop_zip
 }
 #main "$@"
-
-# Check if Acrobat installed before removing installers? Do we need this? Probably not.
-
-confirm_acrobat () {
-
-  if open -Ra "Adobe Acrobat" &> /dev/null; then
-    printf "%s\n" "Adobe Acrobat installed succesffully."
-  else
-    printf "%s\n" "Error: Adobe Acrobat did not install successfully." >&2
-    exit 1
-fi
-}
