@@ -11,6 +11,7 @@ ADOBE_PHOTOSHOP="http://localweb.cns.nyu.edu/cc-2018-mac/mac-photoshop-spr18.zip
 
 LOCAL_WEB="128.122.112.23"
 
+### Preliminaries ###
 
 # Is current UID 0? If not, exit.
 
@@ -56,7 +57,9 @@ ping_local_web () {
  fi
 }
 
-# Download Adobe DC .zip to /Applications
+### Adobe Acrobat Installer ###
+
+# Download Adobe DC .zip to /Applications.
 
 get_acrobat () {
 
@@ -65,7 +68,7 @@ get_acrobat () {
   curl --progress-bar --retry 3 --retry-delay 5 "$ADOBE_ACROBAT" --output /Applications/acrobat.zip
 }
 
-# Unzip acrobat.zip to /Applications
+# Unzip acrobat.zip to /Applications.
 
 unzip_acrobat () {
 
@@ -74,7 +77,7 @@ unzip_acrobat () {
   unzip /Applications/acrobat.zip -d /Applications
 }
 
-# Run installer
+# Run installer.
 
 install_acrobat () {
 
@@ -83,18 +86,19 @@ install_acrobat () {
   installer -pkg /Applications/mac-acrobatdc-spr18/Build/mac-acrobatdc-spr18_Install.pkg -target /
 }
 
-# Check if Acrobat is installed
+# Check if Acroba installed.
 
 confirm_acrobat () {
 
   if open -Ra "Adobe Acrobat" &> /dev/null; then
-    printf "%s\n" "Adobe Acrobat is installed."
+    printf "%s\n" "Adobe Acrobat installed succesffully."
   else
-    printf "%s\n" "Error: Adobe Acrobat is not installed. Contact your sysadmin." >&2
+    printf "%s\n" "Error: Adobe Acrobat did not install successfully." >&2
+    exit 1
 fi
 }
 
-# Remove .zip file and installer
+# Remove .zip file and installer.
 
 remove_zip () {
 
@@ -115,7 +119,7 @@ remove_zip () {
 #  curl --progress-bar --retry 3 --retry-delay 5 "$ADOBE_PHOTOSHOP" --output photoshop.zip
 #}
 
-# Main 
+# Main
 
 main () {
   root_check
