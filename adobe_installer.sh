@@ -11,7 +11,7 @@ ADOBE_PHOTOSHOP="http://localweb.cns.nyu.edu/cc-2018-mac/mac-photoshop-spr18.zip
 
 LOCAL_WEB="128.122.112.23"
 
-### Preliminaries ###
+### Sanity checks. ###
 
 # Is current UID 0? If not, exit.
 
@@ -57,13 +57,13 @@ ping_local_web () {
  fi
 }
 
-### Adobe Acrobat Installer ###
+### Acrobat ###
 
-# Download Adobe DC .zip to /Applications.
+# Download Acrobat .zip to /Applications.
 
 get_acrobat () {
 
-  printf "%s\n" "Retrieving Adobe Acrobat insaller..."
+  printf "%s\n" "Retrieving Acrobat insaller..."
 
   curl --progress-bar --retry 3 --retry-delay 5 "$ADOBE_ACROBAT" --output /Applications/acrobat.zip
 }
@@ -72,12 +72,12 @@ get_acrobat () {
 
 unzip_acrobat () {
 
-  printf "%s\n" "Unzipping to /Applications..."
+  printf "%s\n" "Unzipping Acrobat to /Applications..."
 
   unzip /Applications/acrobat.zip -d /Applications
 }
 
-# Run installer.
+# Run Acrobat installer.
 
 install_acrobat () {
 
@@ -86,7 +86,125 @@ install_acrobat () {
   installer -pkg /Applications/mac-acrobatdc-spr18/Build/mac-acrobatdc-spr18_Install.pkg -target /
 }
 
-# Check if Acroba installed.
+# Remove Acrobat .zip file and installer.
+
+remove_acrobat_zip () {
+
+  printf "%s\n" "Removing acrobat.zip and mac-acrobat-spr18."
+
+  rm -rv /Applications/{acrobat.zip,mac-acrobatdc-spr18}
+}
+
+### Illustrator ###
+
+# Download Illustrator .zip to /Applications
+
+get_illustrator () {
+
+  printf "%s\n" "Retrieving Illustrator insaller..."
+
+  curl --progress-bar --retry 3 --retry-delay 5 "$ADOBE_ILLUSTRATOR" --output /Applications/illustrator.zip
+}
+
+# Unzip Illustrator to /Applications
+
+unzip_illustrator () {
+
+  printf "%s\n" "Unzipping to /Applications..."
+
+  unzip /Applications/illustrator.zip -d /Applications
+}
+
+# Run Illustrator installer.
+
+install_illustrator () {
+
+  printf "%s\n" "Installing Illustrator..."
+
+  installer -pkg /Applications/mac-illustrator-spr18/Build/mac-illustrator-spr18_Install.pkg -target /
+}
+
+# Remove Illustrator .zip file and installer.
+
+remove_illustrator_zip () {
+
+  printf "%s\n" "Removing illustrator.zip and mac-acrobatdc-spr18."
+
+  rm -rv /Applications/{illustrator.zip,mac-illustrator-spr18}
+}
+
+# Download Photoshop .zip to /Applications
+
+get_photoshop () {
+
+  printf "%s\n" "Retrieving Photoshop insaller..."
+
+  curl --progress-bar --retry 3 --retry-delay 5 "$ADOBE_PHOTOSHOP" --output /Applications/photoshop.zip
+}
+
+# Unzip Photoshop to /Applications
+
+unzip_photoshop () {
+
+  printf "%s\n" "Unzipping to /Applications..."
+
+  unzip /Applications/photoshop.zip -d /Applications
+}
+
+# Run Illustrator installer.
+
+install_photoshop () {
+
+  printf "%s\n" "Installing Photoshop..."
+
+  installer -pkg /Applications/mac-illustrator-spr18/Build/mac-illustrator-spr18_Install.pkg -target /
+}
+
+# Remove Photoshop .zip file and installer.
+
+remove_photoshop_zip () {
+
+  printf "%s\n" "Removing illustrator.zip and mac-acrobatdc-spr18."
+
+  rm -rv /Applications/{acrobat.zip,mac-acrobatdc-spr18}
+}
+
+# Main
+
+sanity_checks () {
+
+  root_check
+  check_disk_space
+  curl_check
+  ping_local_web
+}
+
+acrobat () {
+
+  get_acrobat
+  unzip_acrobat
+  install_acrobat
+  remove_acrobat_zip
+}
+
+illustrator () {
+
+  get_illustrator
+  unzip_illustrator
+  install_illustrator
+  remove_illustrator_zip
+}
+
+photoshop () {
+
+  get_photoshop
+  unzip_photoshop
+  install_photoshop
+  remove_photoshop_zip
+}
+#main "$@"
+
+# Check if Acrobat installed before removing installers? Do we need this? Probably not.
 
 confirm_acrobat () {
 
@@ -97,48 +215,3 @@ confirm_acrobat () {
     exit 1
 fi
 }
-
-# Remove .zip file and installer.
-
-remove_zip () {
-
-  printf "%s\n" "Removing Acrobat.zip and mac-acrobat-spr18."
-
-  rm -rv /Applications/{acrobat.zip,mac-acrobatdc-spr18}
-}
-
-### Adobe Illustrator Installer ###  
-
-# Download Adobe Illustrator zip to /Applications
-
-get_illustrator () {
-
-  printf "%s\n" "Retrieving Adobe Illustrator insaller..."
- 
-  curl --progress-bar --retry 3 --retry-delay 5 "$ADOBE_ILLUSTRATOR" --output /Applications/illustrator.zip
-}
-
-# Download Adobe Photoshop zip to /Applications
-
-get_photoshop () {
- 
-  printf "%s\n" "Retrieving Adobe Photoshop insaller..."
- 
-  curl --progress-bar --retry 3 --retry-delay 5 "$ADOBE_PHOTOSHOP" --output /Applications/photoshop.zip
-}
-
-# Main
-
-main () {
-  root_check
-  check_disk_space
-  curl_check
-  ping_local_web
-  get_acrobat
-  unzip_acrobat
-  install_acrobat
-  confirm_acrobat
-  remove_zip
-}
-
-main "$@"
