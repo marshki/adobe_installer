@@ -86,7 +86,7 @@ install_acrobat () {
   installer -pkg /Applications/mac-acrobatdc-spr18/Build/mac-acrobatdc-spr18_Install.pkg -target /
 }
 
-# Check if Acroba installed.
+# Check if Acrobat installed.
 
 confirm_acrobat () {
 
@@ -107,17 +107,23 @@ remove_zip () {
   rm -rv /Applications/{acrobat.zip,mac-acrobatdc-spr18}
 }
 
-# Download Adobe Illustrator zip
-# get_illustrator () {
-#  printf "%s\n" "Retrieving Adobe Acrobat insaller..."
-#  curl --progress-bar --retry 3 --retry-delay 5 "$ADOBE_ILLUSTRATOR" --output illustrator.zip
-#}
+# Download Adobe Illustrator zip to /Applications.
 
-# Download Adobe Photoshop zip
-# get_photoshop () {
-#  printf "%s\n" "Retrieving Adobe Acrobat insaller..."
-#  curl --progress-bar --retry 3 --retry-delay 5 "$ADOBE_PHOTOSHOP" --output photoshop.zip
-#}
+get_illustrator () {
+
+  printf "%s\n" "Retrieving Adobe Acrobat insaller..."
+
+  curl --progress-bar --retry 3 --retry-delay 5 "$ADOBE_ILLUSTRATOR" --output /Applications/illustrator.zip
+}
+
+# Download Adobe Photoshop zip to /Applications. 
+
+get_photoshop () {
+  
+  printf "%s\n" "Retrieving Adobe Acrobat insaller..."
+  
+  curl --progress-bar --retry 3 --retry-delay 5 "$ADOBE_PHOTOSHOP" --output /Applications/photoshop.zip
+}
 
 # Main
 
