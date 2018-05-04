@@ -1,45 +1,48 @@
 #!/bin/bash
+# Test menu 
 
-# WIP! Doesn't work correctly (yet). 
+#### Display pause prompt ####
+# Suspend processing of script; display message prompting user to press [Enter] key to continue
+# $1-> Message (optional)
 
-PS3=("Enter the number of the Adobe software you want to install: ")
+function pause() {
+    local message="$@"
+    [ -z $message ] && message="Press [Enter] key to continue:  "
+    read -p "$message" readEnterKey            
+}
 
-ADOBE_INSTALLERS=(
-"Acrobat_DC 1"
-"Illustrator 2"
-"Photoshop 3"
-"Quit"
-)
+#### Display on-screen menu ####
 
-select opt in "$ADOBE_INSTALLERS"
-
-do
-    case $opt in
-        "Acrobat_DC 1")
-            printf "%sn" "You selected ACROBAT_DC"
-            ;;
-        " Illustrator 2")
-            printf "%s\n" "You selected Illustrator 2"
-            ;;
-        "Photoshop 3")
-            printf "%s\n" "You selected Photoshop 3"
-            ;;
-        "Quit")
-            break
-            ;;
-        *) printf "%s\n" "Invalid Option";;
-    esac
-done
+function show_menu() {
+    date
+    printf "%s\n" "------------------------------"
+    printf "%s\n" "  Adobe Installer             " 
+    printf "%s\n" "  Main Menu                   "
+    printf "%s\n" "------------------------------"
+        printf "%s\n" "  1. ACROBAT DC" 
+        printf "%s\n" "  2. ILLUSTRATOR"
+        printf "%s\n" "  3. PHOTOSHOP"
+	printf "%s\n" "  4. EXIT"
+}
 
 
+#### Get input via the keyboard and make a decision using case...esac ####
 
+function read_input() {
+    local c
+    read -p "Enter your choice [ 1-4 ]:  " c
+    case $c in
+        1) adobe ;;
+        2) illusrator ;;
+        3) photoshop ;;
+        4) printf "%s\n" "Ciao!"; exit 0 ;;
+        *)
+           printf "%s\n" "Select an Option (1 to 4):  "
 
+           pause
+    esac 
+}
 
+gnore CTRL+C, CTRL+Z and quit signals using the trap ####
 
-
-
-
-
-
-
-
+trap '' SIGINT SIGQUIT SIGTSTP
