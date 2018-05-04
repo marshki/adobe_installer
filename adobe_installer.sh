@@ -124,7 +124,6 @@ remove_illustrator_zip () {
 # Download Photoshop .zip to /Applications
 
 get_photoshop () {
-
   printf "%s\n" "Retrieving Photoshop insaller..."
 
   curl --progress-bar --retry 3 --retry-delay 5 "$ADOBE_PHOTOSHOP" --output /Applications/photoshop.zip
