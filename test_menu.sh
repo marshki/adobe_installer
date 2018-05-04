@@ -32,9 +32,9 @@ function read_input() {
     local c
     read -p "Enter your choice [ 1-4 ]:  " c
     case $c in
-        1) adobe ;;
-        2) illusrator ;;
-        3) photoshop ;;
+        1) printf "%s\n" "Acrobat" ;;
+        2) printf "%s\n" "Illusrator" ;;
+        3) printf "%s\n" "Photoshop" ;;
         4) printf "%s\n" "Ciao!"; exit 0 ;;
         *)
            printf "%s\n" "Select an Option (1 to 4):  "
@@ -46,3 +46,9 @@ function read_input() {
 gnore CTRL+C, CTRL+Z and quit signals using the trap ####
 
 trap '' SIGINT SIGQUIT SIGTSTP
+
+while true 
+do 
+    show_menu
+    read_input 
+done	
