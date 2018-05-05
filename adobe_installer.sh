@@ -185,9 +185,9 @@ function read_input() {
     local c
     read -p "Enter your choice [ 1-4 ]:  " c
     case $c in
-        1) printf "%s\n" "INSTALLING ACROBAT..." ;;
-        2) printf "%s\n" "INSTALLING ILLUSTRATOR..." ;;
-        3) printf "%s\n" "INSTALLING PHOTOSHOP..." ;;
+        1) printf "%s\n" acrobat ;;
+        2) printf "%s\n" run_illustrator ;;
+        3) printf "%s\n" photoshop ;;
         4) printf "%s\n" "Ciao!"; exit 0 ;;
         *)
            printf "%s\n" "Select an Option (1 to 4):  "
@@ -217,7 +217,7 @@ acrobat() {
   remove_acrobat_zip
 }
 
-illustrator() {
+run_illustrator() {
   get_illustrator
   unzip_illustrator
   install_illustrator
@@ -232,12 +232,13 @@ photoshop() {
 }
 
 sanity_checks
+run_illustrator
 
-while true
-do
-    clear
-    show_menu
-    read_input
-done
+#while true
+#do
+#    clear
+#    show_menu
+#    read_input
+#done
 
-main "$@"
+#main "$@"
