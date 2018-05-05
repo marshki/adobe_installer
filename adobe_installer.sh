@@ -1,7 +1,7 @@
 #!/bin/bash
 # mjk235 [at] nyu [dot] edu --2018.04.25
 
-### Adobe installer v.0.1 for OS X. ###
+#### Adobe installer v.0.1 for OS X. ####
 
 ADOBE_ACROBAT="http://localweb.cns.nyu.edu/cc-2018-mac/mac-acrobatdc-spr18.zip"
 
@@ -11,7 +11,7 @@ ADOBE_PHOTOSHOP="http://localweb.cns.nyu.edu/cc-2018-mac/mac-photoshop-spr18.zip
 
 LOCAL_WEB="128.122.112.23"
 
-### Sanity checks. ###
+#### Sanity checks. ####
 
 # Is current UID 0? If not, exit.
 
@@ -53,7 +53,33 @@ ping_local_web () {
  fi
 }
 
-### Acrobat ###
+#### Menu ####
+
+# Display pause prompt #
+# Suspend processing of script; display message prompting user to press [Enter] key to continue
+# $1-> Message (optional)
+
+function pause() {
+    local message="$@"
+    [ -z $message ] && message="Press [Enter] key to continue:  "
+    read -p "$message" readEnterKey
+}
+
+#### Display on-screen menu ####
+
+function show_menu() {
+    date
+    printf "%s\n" "------------------------------"
+    printf "%s\n" "  Adobe Installer             "
+    printf "%s\n" "  Main Menu                   "
+    printf "%s\n" "------------------------------"
+        printf "%s\n" "  1. INSTALL ACROBAT DC"
+        printf "%s\n" "  2. INSTALL ILLUSTRATOR"
+        printf "%s\n" "  3. INSTALL PHOTOSHOP"
+        printf "%s\n" "  4. EXIT PROGRAM"
+}
+
+#### Acrobat ####
 
 # Download Acrobat .zip to /Applications.
 
@@ -87,7 +113,7 @@ remove_acrobat_zip () {
   rm -rv /Applications/{acrobat.zip,mac-acrobatdc-spr18}
 }
 
-### Illustrator ###
+#### Illustrator ####
 
 # Download Illustrator .zip to /Applications
 
@@ -153,7 +179,29 @@ remove_photoshop_zip () {
   rm -rv /Applications/{photoshop.zip,mac-photoshop-spr18}
 }
 
-# Main
+#### Get input via the keyboard and make a decision using case...esac ####
+
+function read_input() {
+    local c
+    read -p "Enter your choice [ 1-4 ]:  " c
+    case $c in
+        1) printf "%s\n" "INSTALLING ACROBAT..." ;;
+        2) printf "%s\n" "INSTALLING ILLUSTRATOR..." ;;
+        3) printf "%s\n" "INSTALLING PHOTOSHOP..." ;;
+        4) printf "%s\n" "Ciao!"; exit 0 ;;
+        *)
+           printf "%s\n" "Select an Option (1 to 4):  "
+
+           pause
+    esac
+}
+
+# Ignore CTRL+C, CTRL+Z and quit signals using the trap ####
+
+trap '' SIGINT SIGQUIT SIGTSTP
+
+
+#### Main ####
 
 sanity_checks () {
   root_check
@@ -182,4 +230,13 @@ photoshop () {
   install_photoshop
   remove_photoshop_zip
 }
-#main "$@"
+
+sanity_checks
+
+while true
+do
+    show_menu
+    read_input
+done
+
+main "$@"
