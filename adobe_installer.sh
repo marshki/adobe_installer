@@ -53,9 +53,16 @@ ping_local_web() {
  fi
 }
 
+sanity_checks() {
+  root_check
+  check_disk_space
+  curl_check
+  ping_local_web
+}
+
 #### Menu ####
 
-# Display pause prompt 
+# Display pause prompt
 # Suspend processing of script; display message prompting user to press [Enter] key to continue
 # $1-> Message (optional)
 
@@ -65,7 +72,7 @@ function pause() {
     read -p "$message" readEnterKey
 }
 
-#### Display on-screen menu ####
+# Display on-screen menu
 
 function show_menu() {
     date
@@ -113,6 +120,13 @@ remove_acrobat_zip() {
   rm -rv /Applications/{acrobat.zip,mac-acrobatdc-spr18}
 }
 
+run_acrobat() {
+  get_acrobat
+  unzip_acrobat
+  install_acrobat
+  remove_acrobat_zip
+}
+
 #### Illustrator ####
 
 # Download Illustrator .zip to /Applications
@@ -147,6 +161,13 @@ remove_illustrator_zip() {
   rm -rv /Applications/{illustrator.zip,mac-illustrator-spr18}
 }
 
+run_illustrator() {
+  get_illustrator
+  unzip_illustrator
+  install_illustrator
+  remove_illustrator_zip
+}
+
 # Download Photoshop .zip to /Applications
 
 get_photoshop() {
@@ -179,6 +200,13 @@ remove_photoshop_zip() {
   rm -rv /Applications/{photoshop.zip,mac-photoshop-spr18}
 }
 
+run_photoshop() {
+  get_photoshop
+  unzip_photoshop
+  install_photoshop
+  remove_photoshop_zip
+}
+
 #### Get input via the keyboard and make a decision using case...esac ####
 
 function read_input() {
@@ -203,42 +231,13 @@ trap '' SIGINT SIGQUIT SIGTSTP
 
 #### Main ####
 
-sanity_checks() {
-  root_check
-  check_disk_space
-  curl_check
-  ping_local_web
-}
-
-acrobat() {
-  get_acrobat
-  unzip_acrobat
-  install_acrobat
-  remove_acrobat_zip
-}
-
-run_illustrator() {
-  get_illustrator
-  unzip_illustrator
-  install_illustrator
-  remove_illustrator_zip
-}
-
-photoshop() {
-  get_photoshop
-  unzip_photoshop
-  install_photoshop
-  remove_photoshop_zip
-}
-
 sanity_checks
-run_illustrator
 
-#while true
-#do
-#    clear
-#    show_menu
-#    read_input
-#done
+while true
+do
+    clear
+    show_menu
+    read_input
+done
 
 #main "$@"
