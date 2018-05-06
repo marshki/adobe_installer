@@ -209,13 +209,13 @@ run_photoshop() {
 
 #### Get input via the keyboard and make a decision using case...esac ####
 
-function read_input() {
+read_input() {
     local c
     read -p "Enter your choice [ 1-4 ]:  " c
     case $c in
-        1) printf "%s\n" acrobat ;;
-        2) printf "%s\n" run_illustrator ;;
-        3) printf "%s\n" photoshop ;;
+        1) run_acrobat ;;
+        2) run_illustrator ;;
+        3) run_photoshop ;;
         4) printf "%s\n" "Ciao!"; exit 0 ;;
         *)
            printf "%s\n" "Select an Option (1 to 4):  "
