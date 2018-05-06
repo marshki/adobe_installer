@@ -5,6 +5,11 @@
 #### Adobe installer v.0.2 for OS X. ####
 #########################################
 
+# TODO:  
+# - add pause and test
+# - add main function 
+# - arrays to reduce code complexity
+
 ADOBE_ACROBAT="http://localweb.cns.nyu.edu/cc-2018-mac/mac-acrobatdc-spr18.zip"
 
 ADOBE_ILLUSTRATOR="http://localweb.cns.nyu.edu/cc-2018-mac/mac-illustrator-spr18.zip"
