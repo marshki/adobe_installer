@@ -14,7 +14,7 @@ ADOBE_PHOTOSHOP="http://localweb.cns.nyu.edu/cc-2018-mac/mac-photoshop-spr18.zip
 LOCAL_WEB="128.122.112.23"
 
 ########################
-#### Sanity checks. ####
+#### Sanity checks  ####
 ########################
 
 # Is current UID 0? If not, exit.
@@ -64,9 +64,9 @@ sanity_checks() {
   ping_local_web
 }
 
-##############
-#### Menu ####
-##############
+######################
+#### Display Menu ####
+######################
 
 # Display pause prompt
 # Suspend processing of script; display message prompting user to press [Enter] key to continue
@@ -83,13 +83,12 @@ function pause() {
 function show_menu() {
     date
     printf "%s\n" "------------------------------"
-    printf "%s\n" "  Adobe Installer             "
-    printf "%s\n" "  Main Menu                   "
+    printf "%s\n" "  ADOBE INSTALLER MAIN MENU   "
     printf "%s\n" "------------------------------"
         printf "%s\n" "  1. INSTALL ACROBAT DC"
         printf "%s\n" "  2. INSTALL ILLUSTRATOR"
         printf "%s\n" "  3. INSTALL PHOTOSHOP"
-        printf "%s\n" "  4. EXIT PROGRAM"
+        printf "%s\n" "  4. EXIT"
 }
 
 #################
@@ -222,21 +221,21 @@ run_photoshop() {
 }
 
 ####################
-#### User input ####
+#### User Input ####
 ####################
 
 #### Get input via the keyboard and make a decision using case...esac ####
 
 read_input() {
     local c
-    read -p "Enter your choice [ 1-4 ]:  " c
+    read -p "ENTER YOUR CHOICE [ 1-4 ]:  " c
     case $c in
         1) run_acrobat ;;
         2) run_illustrator ;;
         3) run_photoshop ;;
-        4) printf "%s\n" "Ciao!"; exit 0 ;;
+        4) printf "%s\n" "CIAO!"; exit 0 ;;
         *)
-           printf "%s\n" "Select an Option (1 to 4):  "
+           printf "%s\n" "SELECT AN OPTION (1 to 4):  "
 
            pause
     esac
