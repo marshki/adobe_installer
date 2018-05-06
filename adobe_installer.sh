@@ -73,9 +73,9 @@ sanity_checks() {
 #### Display Menu ####
 ######################
 
-# Display pause prompt
-# Suspend processing of script; display message prompting user to press [Enter] key to continue
-# $1-> Message (optional)
+# Display pause prompt. 
+# Suspend processing of script; display message prompting user to press [Enter] key to continue. 
+# $1-> Message (optional). 
 
 function pause() {
     local message="$@"
@@ -137,6 +137,7 @@ run_acrobat() {
   unzip_acrobat
   install_acrobat
   remove_acrobat_zip
+  pause 
 }
 
 #####################
@@ -180,6 +181,7 @@ run_illustrator() {
   unzip_illustrator
   install_illustrator
   remove_illustrator_zip
+  pause 
 }
 
 ###################
@@ -223,6 +225,7 @@ run_photoshop() {
   unzip_photoshop
   install_photoshop
   remove_photoshop_zip
+  pause 
 }
 
 ####################
