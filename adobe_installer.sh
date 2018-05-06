@@ -1,7 +1,9 @@
 #!/bin/bash
 # mjk235 [at] nyu [dot] edu --2018.04.25
 
-#### Adobe installer v.0.1 for OS X. ####
+#########################################
+#### Adobe installer v.0.2 for OS X. ####
+#########################################
 
 ADOBE_ACROBAT="http://localweb.cns.nyu.edu/cc-2018-mac/mac-acrobatdc-spr18.zip"
 
@@ -11,7 +13,9 @@ ADOBE_PHOTOSHOP="http://localweb.cns.nyu.edu/cc-2018-mac/mac-photoshop-spr18.zip
 
 LOCAL_WEB="128.122.112.23"
 
+########################
 #### Sanity checks. ####
+########################
 
 # Is current UID 0? If not, exit.
 
@@ -60,7 +64,9 @@ sanity_checks() {
   ping_local_web
 }
 
+##############
 #### Menu ####
+##############
 
 # Display pause prompt
 # Suspend processing of script; display message prompting user to press [Enter] key to continue
@@ -86,7 +92,9 @@ function show_menu() {
         printf "%s\n" "  4. EXIT PROGRAM"
 }
 
+#################
 #### Acrobat ####
+#################
 
 # Download Acrobat .zip to /Applications.
 
@@ -127,7 +135,9 @@ run_acrobat() {
   remove_acrobat_zip
 }
 
+#####################
 #### Illustrator ####
+#####################
 
 # Download Illustrator .zip to /Applications
 
@@ -168,6 +178,10 @@ run_illustrator() {
   remove_illustrator_zip
 }
 
+###################
+#### Photoshop ####
+###################
+
 # Download Photoshop .zip to /Applications
 
 get_photoshop() {
@@ -184,7 +198,7 @@ unzip_photoshop() {
   unzip /Applications/photoshop.zip -d /Applications
 }
 
-# Run Illustrator installer.
+# Run Photoshop installer.
 
 install_photoshop() {
   printf "%s\n" "Installing Photoshop..."
@@ -207,6 +221,10 @@ run_photoshop() {
   remove_photoshop_zip
 }
 
+####################
+#### User input ####
+####################
+
 #### Get input via the keyboard and make a decision using case...esac ####
 
 read_input() {
@@ -228,8 +246,9 @@ read_input() {
 
 trap '' SIGINT SIGQUIT SIGTSTP
 
-
+##############
 #### Main ####
+##############
 
 sanity_checks
 
