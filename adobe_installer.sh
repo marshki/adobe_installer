@@ -6,7 +6,6 @@
 #########################################
 
 # TODO:  
-# - add pause and test
 # - add main function 
 # - arrays to reduce code complexity
 
@@ -79,14 +78,13 @@ sanity_checks() {
 
 function pause() {
     local message="$@"
-    [ -z $message ] && message="Press [Enter] key to continue:  "
+    [ -z $message ] && message="DONE. PRESS [Enter] KEY TO CONTINUE:  "
     read -p "$message" readEnterKey
 }
 
 # Display on-screen menu
 
 function show_menu() {
-    date
     printf "%s\n" "------------------------------"
     printf "%s\n" "  ADOBE INSTALLER MAIN MENU   "
     printf "%s\n" "------------------------------"
