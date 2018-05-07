@@ -257,11 +257,13 @@ trap '' SIGINT SIGQUIT SIGTSTP
 
 sanity_checks
 
-while true
-do
-    clear
-    show_menu
-    read_input
-done
+main () {
 
-#main "$@"
+  while true
+  do
+      clear
+      show_menu
+      read_input
+  done
+}
+main "$@"
