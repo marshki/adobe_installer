@@ -6,8 +6,8 @@
 #########################################
 
 # TODO:  
-# - add main function 
 # - arrays to reduce code complexity
+# - add EULA ? 
 
 ADOBE_ACROBAT="http://localweb.cns.nyu.edu/cc-2018-mac/mac-acrobatdc-spr18.zip"
 
