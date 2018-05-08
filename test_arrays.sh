@@ -4,22 +4,17 @@
 #### Por Examplo ####
 # STOOGES=(Larry Moe Curly Shemp Joe)
 # printf "%s\n" "$STOOGES[1]" 
-#
 
 #########################################
 #### Adobe installer v.0.2 for OS X. ####
 #########################################
 
-
-#ADOBE_ACROBAT="http://localweb.cns.nyu.edu/cc-2018-mac/mac-acrobatdc-spr18.zip"
-## ARRAY_NAME=(NAME     "URL"                                                            name.zip    mac-*-spr18         mac-*-spr18_Install.pkg) 
+###ARRAY_NAME=(NAME     "URL"                                                            name.zip    mac-name-spr18      mac-name-spr18_Install.pkg) ###
 
 ADOBE_ACROBAT=(ACROBAT "http://localweb.cns.nyu.edu/cc-2018-mac/mac-acrobatdc-spr18.zip" acrobat.zip mac-acrobatdc-spr18 mac-acrobatdc-spr18_Install.pkg ) 
 
-#ADOBE_ILLUSTRATOR="http://localweb.cns.nyu.edu/cc-2018-mac/mac-illustrator-spr18.zip"
-
 #################
-#### Acrobat ####
+#### INSTALL ####
 #################
 
 # Download .zip to /Applications.
