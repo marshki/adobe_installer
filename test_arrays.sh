@@ -9,12 +9,17 @@
 #### Adobe installer v.0.2 for OS X. ####
 #########################################
 
-###ARRAY_NAME=(NAME     "URL"                                                            name.zip    mac-name-spr18      mac-name-spr18_Install.pkg) ###
+####ARRAY_NAME=(NAME     
+#"URL"                                                            
+#name.zip    
+#mac-name-spr18      
+#mac-name-spr18_Install.pkg) 
+####
 
-ADOBE_ACROBAT=(ACROBAT \n
-"http://localweb.cns.nyu.edu/cc-2018-mac/mac-acrobatdc-spr18.zip" \n
-acrobat.zip \n
-mac-acrobatdc-spr18 \n
+ADOBE_ACROBAT=(ACROBAT
+"http://localweb.cns.nyu.edu/cc-2018-mac/mac-acrobatdc-spr18.zip"
+acrobat.zip
+mac-acrobatdc-spr18
 mac-acrobatdc-spr18_Install.pkg )
 
 #################
