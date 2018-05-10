@@ -119,7 +119,7 @@ function show_menu() {
 get_acrobat() {
   printf "%s\n" "RETRIEVING ${ADOBE_ACROBAT[0]} INSTALLER..."
 
-  curl --progress-bar --retry 3 --retry-delay 5 ${ADOBE_ACROBAT[1]}" --output /Applications/acrobat.zip
+  curl --progress-bar --retry 3 --retry-delay 5 ${ADOBE_ACROBAT[1]}" --output /Applications/${ADOBE_ACROBAT[2]}
 }
 
 # Unzip acrobat.zip to /Applications.
