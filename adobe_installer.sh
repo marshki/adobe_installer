@@ -117,33 +117,33 @@ function show_menu() {
 # Download Acrobat .zip to /Applications.
 
 get_acrobat() {
-  printf "%s\n" "RETRIEVING ACROBAT INSTALLER..."
+  printf "%s\n" "RETRIEVING ${ADOBE_ACROBAT[0]} INSTALLER..."
 
-  curl --progress-bar --retry 3 --retry-delay 5 "$ADOBE_ACROBAT" --output /Applications/acrobat.zip
+  curl --progress-bar --retry 3 --retry-delay 5 ${ADOBE_ACROBAT[1]}" --output /Applications/acrobat.zip
 }
 
 # Unzip acrobat.zip to /Applications.
 
 unzip_acrobat() {
-  printf "%s\n" "UNZIPING ACROBAT TO /Applications..."
+  printf "%s\n" "UNZIPING ${ADOBE_ACROBAT[0]} TO /Applications..."
 
-  unzip /Applications/acrobat.zip -d /Applications
+  unzip /Applications/${ADOBE_ACROBAT[2]} -d /Applications
 }
 
 # Run Acrobat installer.
 
 install_acrobat() {
-  printf "%s\n" "INSTALLING ACROBAT..."
+  printf "%s\n" "INSTALLING ${ADOBE_ACROBAT[0]}..."
 
-  installer -pkg /Applications/mac-acrobatdc-spr18/Build/mac-acrobatdc-spr18_Install.pkg -target /
+  installer -pkg /Applications/${ADOBE_ACROBAT[3]}/Build/${ADOBE_ACROBAT[4]} -target /
 }
 
 # Remove Acrobat .zip file and installer.
 
 remove_acrobat_zip() {
-  printf "%s\n" "REMOVING acrobat.zip AND mac-acrobat-spr18..."
+  printf "%s\n" "REMOVING ${ADOBE_ACROBAT[2]} AND ${ADOBE_ACROBAT[3}..."
 
-  rm -rv /Applications/{acrobat.zip,mac-acrobatdc-spr18}
+  rm -rv /Applications/{${ADOBE_ACROBAT[2]},${ADOBE_ACROBAT[3]}}
 }
 
 run_acrobat() {
