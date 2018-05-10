@@ -8,17 +8,17 @@
 LOCAL_WEB="128.122.112.23"
 
 ADOBE_ACROBAT=(
-ACROBAT 
-"http://localweb.cns.nyu.edu/cc-2018-mac/mac-acrobatdc-spr18.zip" 
-acrobat.zip 
-mac-acrobatdc-spr18 
+ACROBAT
+"http://localweb.cns.nyu.edu/cc-2018-mac/mac-acrobatdc-spr18.zip"
+acrobat.zip
+mac-acrobatdc-spr18
 mac-acrobatdc-spr18_Install.pkg
 )
 
 ADOBE_ILLUSTRATOR=(
 ILLUSTRATOR
 "http://localweb.cns.nyu.edu/cc-2018-mac/mac-illustrator-spr18.zip"
-illustrator.zip 
+illustrator.zip
 mac-illustrator-spr18
 mac-illustrator-spr18_Install.pkg
 )
@@ -86,9 +86,9 @@ sanity_checks() {
 #### Display Menu ####
 ######################
 
-# Display pause prompt. 
-# Suspend processing of script; display message prompting user to press [Enter] key to continue. 
-# $1-> Message (optional). 
+# Display pause prompt.
+# Suspend processing of script; display message prompting user to press [Enter] key to continue.
+# $1-> Message (optional).
 
 function pause() {
     local message="$@"
@@ -149,7 +149,7 @@ run_acrobat() {
   unzip_acrobat
   install_acrobat
   remove_acrobat_zip
-  pause 
+  pause
 }
 
 #####################
@@ -193,7 +193,7 @@ run_illustrator() {
   unzip_illustrator
   install_illustrator
   remove_illustrator_zip
-  pause 
+  pause
 }
 
 ###################
@@ -203,33 +203,33 @@ run_illustrator() {
 # Download Photoshop .zip to /Applications
 
 get_photoshop() {
-  printf "%s\n" "RETRIEVING PHOTOSHOP INSTALLER..."
+  printf "%s\n" "RETRIEVING ${ADOBE_PHOTOSHOP[0]} INSTALLER..."
 
-  curl --progress-bar --retry 3 --retry-delay 5 "$ADOBE_PHOTOSHOP" --output /Applications/photoshop.zip
+  curl --progress-bar --retry 3 --retry-delay 5 ${ADOBE_PHOTOSHOP[1]} --output /Applications/${ADOBE_PHOTOSHOP[2]}
 }
 
 # Unzip Photoshop to /Applications
 
 unzip_photoshop() {
-  printf "%s\n" "UNZIPPING PHOTOSHOP TO /Applications..."
+  printf "%s\n" "UNZIPPING ${ADOBE_PHOTOSHOP[0]} TO /Applications..."
 
-  unzip /Applications/photoshop.zip -d /Applications
+  unzip /Applications/${ADOBE_PHOTOSHOP[2]} -d /Applications
 }
 
 # Run Photoshop installer.
 
 install_photoshop() {
-  printf "%s\n" "INSTALLING PHOTOSHOP..."
+  printf "%s\n" "INSTALLING ${ADOBE_PHOTOSHOP[0]}..."
 
-  installer -pkg /Applications/mac-photoshop-spr18/Build/mac-photoshop-spr18_Install.pkg -target /
+  installer -pkg /Applications/${ADOBE_PHOTOSHOP[3]}/Build/${ADOBE_PHOTOSHOP[4]} -target /
 }
 
 # Remove Photoshop .zip file and installer.
 
 remove_photoshop_zip() {
-  printf "%s\n" "REMOVING photoshop.zip AND mac-photoshop-spr18."
+  printf "%s\n" "REMOVING ${ADOBE_PHOTOSHOP[2]} AND ${ADOBE_PHOTOSHOP[3]}."
 
-  rm -rv /Applications/{photoshop.zip,mac-photoshop-spr18}
+  rm -rv /Applications/{${ADOBE_PHOTOSHOP[2]},${ADOBE_PHOTOSHOP[3]}}
 }
 
 run_photoshop() {
@@ -237,7 +237,7 @@ run_photoshop() {
   unzip_photoshop
   install_photoshop
   remove_photoshop_zip
-  pause 
+  pause
 }
 
 ####################
@@ -261,7 +261,7 @@ read_input() {
     esac
 }
 
-# Ignore CTRL+C, CTRL+Z and quit signals using the trap 
+# Ignore CTRL+C, CTRL+Z and quit signals using the trap
 
 trap '' SIGINT SIGQUIT SIGTSTP
 
