@@ -5,33 +5,31 @@
 #### Adobe installer v.0.2 for OS X. ####
 #########################################
 
-# TODO:  
-
 LOCAL_WEB="128.122.112.23"
 
 ADOBE_ACROBAT=(
-ACROBAT
-"http://localweb.cns.nyu.edu/cc-2018-mac/mac-acrobatdc-spr18.zip"
-acrobat.zip
-mac-acrobatdc-spr18
-mac-acrobatdc-spr18_Install.pkg 
+ACROBAT 
+"http://localweb.cns.nyu.edu/cc-2018-mac/mac-acrobatdc-spr18.zip" 
+acrobat.zip 
+mac-acrobatdc-spr18 
+mac-acrobatdc-spr18_Install.pkg
 )
 
-ADOBE_ILLUSTRATOR=(
-ILLUSTRATOR
-"http://localweb.cns.nyu.edu/cc-2018-mac/mac-illustrator-spr18.zip"
-illustrator.zip 
-mac-illustrator-spr18
-mac-illustrator-spr18_Install.pkg
-)
+#ADOBE_ILLUSTRATOR=(
+#ILLUSTRATOR
+#"http://localweb.cns.nyu.edu/cc-2018-mac/mac-illustrator-spr18.zip"
+#illustrator.zip 
+#mac-illustrator-spr18
+#mac-illustrator-spr18_Install.pkg
+#)
 
-ADOBE_PHOTOSHOP=(
-PHOTOSHOP
-"http://localweb.cns.nyu.edu/cc-2018-mac/mac-photoshop-spr18.zip"
-photoshop.zip
-mac-photoshop-spr18
-mac-photoshop-spr18_Install.pkg
-)
+#ADOBE_PHOTOSHOP=(
+#PHOTOSHOP
+#"http://localweb.cns.nyu.edu/cc-2018-mac/mac-photoshop-spr18.zip"
+#photoshop.zip
+#mac-photoshop-spr18
+#mac-photoshop-spr18_Install.pkg
+#)
 
 ########################
 #### Sanity checks  ####
@@ -119,7 +117,7 @@ function show_menu() {
 get_acrobat() {
   printf "%s\n" "RETRIEVING ${ADOBE_ACROBAT[0]} INSTALLER..."
 
-  curl --progress-bar --retry 3 --retry-delay 5 ${ADOBE_ACROBAT[1]}" --output /Applications/${ADOBE_ACROBAT[2]}
+  curl --progress-bar --retry 3 --retry-delay 5 ${ADOBE_ACROBAT[1]} --output /Applications/${ADOBE_ACROBAT[2]}
 }
 
 # Unzip acrobat.zip to /Applications.
@@ -141,7 +139,7 @@ install_acrobat() {
 # Remove Acrobat .zip file and installer.
 
 remove_acrobat_zip() {
-  printf "%s\n" "REMOVING ${ADOBE_ACROBAT[2]} AND ${ADOBE_ACROBAT[3}..."
+  printf "%s\n" "REMOVING ${ADOBE_ACROBAT[2]} AND ${ADOBE_ACROBAT[3]}..."
 
   rm -rv /Applications/{${ADOBE_ACROBAT[2]},${ADOBE_ACROBAT[3]}}
 }
@@ -263,7 +261,7 @@ read_input() {
     esac
 }
 
-# Ignore CTRL+C, CTRL+Z and quit signals using the trap ####
+# Ignore CTRL+C, CTRL+Z and quit signals using the trap 
 
 trap '' SIGINT SIGQUIT SIGTSTP
 
