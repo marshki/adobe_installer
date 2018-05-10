@@ -159,9 +159,9 @@ run_acrobat() {
 # Download Illustrator .zip to /Applications
 
 get_illustrator() {
-  printf "%s\n" "RETRIEVING ${ADOBE_ILLUSTRATOR[0]} ILLUSTRATOR INSTALLER..."
+  printf "%s\n" "RETRIEVING ${ADOBE_ILLUSTRATOR[0]} INSTALLER..."
 
-  curl --progress-bar --retry 3 --retry-delay 5 ${ADOBE_ILLUSTRATOR[1]} --output /Applications/${ADOBE_ILLUSTRATOR[2]
+  curl --progress-bar --retry 3 --retry-delay 5 ${ADOBE_ILLUSTRATOR[1]} --output /Applications/${ADOBE_ILLUSTRATOR[2]}
 }
 
 # Unzip Illustrator to /Applications
