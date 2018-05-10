@@ -15,21 +15,21 @@ mac-acrobatdc-spr18
 mac-acrobatdc-spr18_Install.pkg
 )
 
-#ADOBE_ILLUSTRATOR=(
-#ILLUSTRATOR
-#"http://localweb.cns.nyu.edu/cc-2018-mac/mac-illustrator-spr18.zip"
-#illustrator.zip 
-#mac-illustrator-spr18
-#mac-illustrator-spr18_Install.pkg
-#)
+ADOBE_ILLUSTRATOR=(
+ILLUSTRATOR
+"http://localweb.cns.nyu.edu/cc-2018-mac/mac-illustrator-spr18.zip"
+illustrator.zip 
+mac-illustrator-spr18
+mac-illustrator-spr18_Install.pkg
+)
 
-#ADOBE_PHOTOSHOP=(
-#PHOTOSHOP
-#"http://localweb.cns.nyu.edu/cc-2018-mac/mac-photoshop-spr18.zip"
-#photoshop.zip
-#mac-photoshop-spr18
-#mac-photoshop-spr18_Install.pkg
-#)
+ADOBE_PHOTOSHOP=(
+PHOTOSHOP
+"http://localweb.cns.nyu.edu/cc-2018-mac/mac-photoshop-spr18.zip"
+photoshop.zip
+mac-photoshop-spr18
+mac-photoshop-spr18_Install.pkg
+)
 
 ########################
 #### Sanity checks  ####
@@ -159,33 +159,33 @@ run_acrobat() {
 # Download Illustrator .zip to /Applications
 
 get_illustrator() {
-  printf "%s\n" "RETRIEVING ILLUSTRATOR INSTALLER..."
+  printf "%s\n" "RETRIEVING ${ADOBE_ILLUSTRATOR[0]} ILLUSTRATOR INSTALLER..."
 
-  curl --progress-bar --retry 3 --retry-delay 5 "$ADOBE_ILLUSTRATOR" --output /Applications/illustrator.zip
+  curl --progress-bar --retry 3 --retry-delay 5 ${ADOBE_ILLUSTRATOR[1]} --output /Applications/${ADOBE_ILLUSTRATOR[2]
 }
 
 # Unzip Illustrator to /Applications
 
 unzip_illustrator() {
-  printf "%s\n" "UNZIPPING ILLUSTRATOR TO /Applications..."
+  printf "%s\n" "UNZIPPING ${ADOBE_ILLUSTRATOR[0]} TO /Applications..."
 
-  unzip /Applications/illustrator.zip -d /Applications
+  unzip /Applications/${ADOBE_ILLUSTRATOR[2]} -d /Applications
 }
 
 # Run Illustrator installer.
 
 install_illustrator() {
-  printf "%s\n" "INSTALLING ILLUSTRATOR..."
+  printf "%s\n" "INSTALLING ${ADOBE_ILLUSTRATOR[0]}..."
 
-  installer -pkg /Applications/mac-illustrator-spr18/Build/mac-illustrator-spr18_Install.pkg -target /
+  installer -pkg /Applications/${ADOBE_ILLUSTRATOR[3]}/Build/${ADOBE_ILLUSTRATOR[4]} -target /
 }
 
 # Remove Illustrator .zip file and installer.
 
 remove_illustrator_zip() {
-  printf "%s\n" "REMOVING illustrator.zip AND mac-illustrator-spr18."
+  printf "%s\n" "REMOVING ${ADOBE_ILLUSTRATOR[2]} AND ${ADOBE_ILLUSTRATOR[3]}."
 
-  rm -rv /Applications/{illustrator.zip,mac-illustrator-spr18}
+  rm -rv /Applications/{${ADOBE_ILLUSTRATOR[2]},${ADOBE_ILLUSTRATOR[3]}}
 }
 
 run_illustrator() {
