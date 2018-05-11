@@ -57,7 +57,7 @@ fi
 
 curl_check() {
   if ! [ -x "$(command -v curl 2>/dev/null)" ]; then
-    printf "%s\n" "ERROR: CURL: IS NOT INSTALLED. EXITING."  >&2
+    printf "%s\n" "ERROR: CURL IS NOT INSTALLED. EXITING."  >&2
     exit 1
 fi
 }
