@@ -1,6 +1,8 @@
 # Adobe Installer
 
-Bash script to retrieve, unzip, install, and cleanup a subset of Adobe's Creative Cloud software.
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE)
+
+Bash script to retrieve, unzip, install, and cleanup a subset of [Adobe's Creative Cloud](https://www.adobe.com/creativecloud.html?promoid=NGWGRLB2&mv=other) software.
 
 Open to members of New York University's [Center for Neural Science](http://www.cns.nyu.edu/) and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the Meyer network. 
 
