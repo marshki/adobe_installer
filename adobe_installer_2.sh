@@ -181,9 +181,11 @@ trap '' SIGINT SIGQUIT SIGTSTP
 #### Main ####
 ##############
 
-sanity_checks
+#sanity_checks
 
 main () {
+
+sanity_checks
 
   while true
   do
