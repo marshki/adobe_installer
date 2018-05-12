@@ -162,9 +162,9 @@ read_input() {
     local c
     read -p "ENTER YOUR CHOICE [ 1-4 ]:  " c
     case $c in
-        1) run_acrobat ;;
-        2) run_illustrator ;;
-        3) run_photoshop ;;
+        1) run_installation "${ADOBE_ACROBAT[@]}";;
+        2) run_installation "${ADOBE_ILLUSTRATOR[@]}" ;;
+        3) run_installation "${ADOBE_PHOTOSHOP[@]}" ;;
         4) printf "%s\n" "CIAO!"; exit 0 ;;
         *)
            printf "%s\n" "SELECT AN OPTION (1 to 4):  "
