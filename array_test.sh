@@ -20,33 +20,33 @@ mac-acrobatdc-spr18_Install.pkg
 # Download .zip to /Applications.
 
 get_installer() {
-  printf "%s\n" "RETRIEVING $0 INSTALLER..."
+  printf "%s\n" "RETRIEVING $1 INSTALLER..."
 
-  curl --progress-bar --retry 3 --retry-delay 5 $1 --output /Applications/$3"
+  curl --progress-bar --retry 3 --retry-delay 5 $2 --output /Applications/$3
 }
 
 # Unzip .zip to /Applications.
 
 unzip_installer() {
-  printf "%s\n" "UNZIPING $0 TO /Applications..."
+  printf "%s\n" "UNZIPING $1 TO /Applications..."
 
-  unzip /Applications/$2 -d /Applications
+  unzip /Applications/$3 -d /Applications
 }
 
 # Run installer.
 
 install_installer() {
-  printf "%s\n" "INSTALLING $0..."
+  printf "%s\n" "INSTALLING $1..."
 
-  installer -pkg /Applications/$3/Build/$4 -target /
+  installer -pkg /Applications/$4/Build/$5 -target /
 }
 
 # Remove .zip file and installer.
 
 remove_installer() {
-  printf "%s\n" "REMOVING $2 AND $3..."
+  printf "%s\n" "REMOVING $3 AND $4..."
 
-  rm -rv /Applications/{$2,$3}
+  rm -rv /Applications/{$3,$4}
 }
 
 run_installation() {
@@ -58,3 +58,5 @@ run_installation() {
 }
 
 run_installation "${ADOBE_ACROBAT[@]}"
+
+
