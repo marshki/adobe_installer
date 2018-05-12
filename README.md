@@ -9,7 +9,7 @@ Written and tested to run on Mac OS X.
 ## Usage 
 
 As ROOT, call the script: 
-`bash adobe_installer.sh'
+`bash adobe_installer.sh`
 
 ## History 
 v.0.0.3 2018.05.12
