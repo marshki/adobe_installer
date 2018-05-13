@@ -39,8 +39,9 @@ serial_cereal () {
 # Remove .zip and serializer 
 
 remove_cereal () {
-	printf "%s\n" "Nom, nom, nom..." 
-	rm -rv /Applications/{cereal.zip,mac-licfile-fall17-new} 
+	printf "%s\n" "Removing cereal. Nom, nom, nom..." 
+	rm -rv /Applications/{cereal.zip,mac-licfile-fall17-new}
+	printf "%s\n" "DONE."
  
 } 
 
