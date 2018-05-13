@@ -28,10 +28,14 @@ function goto_cereal () {
 	cd mac-licfile-fall17-new
 }
 
+# Run serializer 
+
 function serial_cereal {
 	printf "%s\n" "Nom, nom, nom..."
 	./AdobeSerialization
 }
+
+# Main 
 
 main() {
 	retrieve_cereal
