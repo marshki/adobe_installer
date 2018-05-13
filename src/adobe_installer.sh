@@ -1,9 +1,12 @@
 #!/bin/bash
 # mjk235 [at] nyu [dot] edu --2018.04.25
+# v.0.3
 
-#########################################
-#### Adobe installer v.0.3 for OS X. ####
-#########################################
+#############################################################
+#### Adobe installer on OS X.       			 ####
+#### Requires: Root privileges; access to Meyer network; #### 
+#### and adequate free disk space.                       ####  
+#############################################################
 
 LOCAL_WEB="128.122.112.23"
 
