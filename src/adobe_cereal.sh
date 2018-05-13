@@ -1,20 +1,27 @@
 #!/bin/bash
 # mjk235 [at] nyu [dot] edu
 
-# Retrieve Adobe serializer --> Unzip --> Change dir to location of serializer --> Run
-# Need to be on NYU's LAN 
+##########################
+#### Adobe Serializer ####
+##########################
 
 CEREAL="http://localweb.cns.nyu.edu/unixadmin/cc-mac/mac-licfile-fall17-new.zip"
+
+# Retrieve serializer .zip 
 
 function retrieve_cereal () {
   printf "%s\n" "Retrieving Adobe serializer..."
   curl --progress-bar --retry 3 --retry-delay 5 "$CEREAL" --output cereal.zip
 }
 
+# Unzip .zip 
+
 function unzip_cereal () {
 	printf "%s\n" "Unzipping..."
 	unzip cereal.zip
 } 
+
+# Change directory to serializer file 
 
 function goto_cereal () {
 	printf "%s\n" "Changing dirs to cereal..."
