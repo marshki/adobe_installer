@@ -10,6 +10,9 @@
 
 LOCAL_WEB="128.122.112.23"
 
+# Arrays follow this structure: 
+# ARRAY_NAME=(NAME "URL" name.zip mac-name-spr18 mac-name-spr18_Install.pkg)
+
 ADOBE_ACROBAT=(
 ACROBAT
 "http://localweb.cns.nyu.edu/cc-2018-mac/mac-acrobatdc-spr18.zip"
