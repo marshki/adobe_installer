@@ -187,8 +187,6 @@ trap '' SIGINT SIGQUIT SIGTSTP
 #### Main ####
 ##############
 
-#sanity_checks
-
 main () {
 
 sanity_checks
