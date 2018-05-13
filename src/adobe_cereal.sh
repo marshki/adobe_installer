@@ -7,25 +7,25 @@
 
 CEREAL="http://localweb.cns.nyu.edu/unixadmin/cc-mac/mac-licfile-fall17-new.zip"
 
-# Retrieve serializer .zip 
+# Retrieve .zip and place in /Applications 
 
 function retrieve_cereal () {
-  printf "%s\n" "Retrieving Adobe serializer..."
-  curl --progress-bar --retry 3 --retry-delay 5 "$CEREAL" --output cereal.zip
+  printf "%s\n" "Retrieving Adobe cereal..."
+  curl --progress-bar --retry 3 --retry-delay 5 "$CEREAL" --output /Applications/cereal.zip
 }
 
-# Unzip .zip 
+# Unzip .zip to /Applications
 
 function unzip_cereal () {
-	printf "%s\n" "Unzipping..."
-	unzip cereal.zip
+	printf "%s\n" "Unzipping cereal to Applications..."
+	unzip /Applications/cereal.zip -d /Applications
 } 
 
 # Change directory to serializer file 
 
-function goto_cereal () {
+function go_to_cereal () {
 	printf "%s\n" "Changing dirs to cereal..."
-	cd mac-licfile-fall17-new
+	cd /Applications/mac-licfile-fall17-new
 }
 
 # Run serializer 
@@ -40,7 +40,7 @@ function serial_cereal {
 main() {
 	retrieve_cereal
 	unzip_cereal
-	goto_cereal
+	go_to_cereal
 	serial_cereal
 }
 
