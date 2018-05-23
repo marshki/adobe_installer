@@ -53,7 +53,7 @@ fi
 # Is there adequate disk space in "/Applications"? If not, exit.
 
 check_disk_space() {
-  if [ $(df -Hl /Applications |awk 'FNR == 2 {print $4}' |sed 's/G//') -le 10 ]; then
+  if [ $(df -l /Applications |awk 'FNR == 2 {print $4}') -le 10000000 ]; then
     printf "%s\n" "ERROR: NOT ENOUGH FREE DISK SPACE. EXITING." >&2
     exit 1
 fi
