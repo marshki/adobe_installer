@@ -17,6 +17,8 @@ As ROOT, call the script:
 ## TODO 
 
 [ ] Integrate serializer?
+
+[ ] Option to install all packages and run serializer? 
  
 [ ] Code review. Refactor where needed. 
 
