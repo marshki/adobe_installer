@@ -15,8 +15,10 @@ As ROOT, call the script:
 `bash adobe_installer.sh`
 
 ## TODO 
-[ ] Integrate serializer? 
-[ ] Code review, refactor where needed
+
+[ ] Integrate serializer?
+ 
+[ ] Code review. Refactor where needed. 
 
 ## History 
 v.0.3 2018.05.12
