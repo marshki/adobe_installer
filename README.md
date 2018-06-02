@@ -12,7 +12,7 @@ Written and tested to run on Mac OS X.
 ## Usage 
 
 As ROOT, call the script: 
-`bash adobe_installer.sh`
+`bash adobe_installer.sh` then follow on-screen prompts.
 
 ## TODO 
 
