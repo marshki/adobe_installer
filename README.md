@@ -19,11 +19,11 @@ As ROOT, call the script:
 
 ## TODO 
 
-[ ] Integrate serializer?
+- [ ] Integrate serializer?
 
-[ ] Option to install all packages and run serializer? 
+- [ ] Option to install all packages and run serializer? 
  
-[ ] Code review. Refactor where needed. 
+- [ ] Code review. Refactor where needed. 
 
 ## History 
 v.0.3 2018.05.12
