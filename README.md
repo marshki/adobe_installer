@@ -5,7 +5,8 @@
 
 Bash script to retrieve, unzip, install, and cleanup a subset of [Adobe's Creative Cloud](https://www.adobe.com/creativecloud.html?promoid=NGWGRLB2&mv=other) software.
 
-Open to members of New York University's [Center for Neural Science](http://www.cns.nyu.edu/) and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the Meyer network. 
+Open to members of New York University's: [Center for Brain Imaging](http://cbi.nyu.edu), [Center for Neural Science](http://www.cns.nyu.edu), 
+and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the Meyer network. 
 
 Written and tested to run on Mac OS X. 
 
