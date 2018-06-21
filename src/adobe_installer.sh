@@ -214,6 +214,7 @@ run_serializer () {
   go_to_cereal
   serial_cereal
   remove_cereal
+  pause
 } 
 
 ####################
