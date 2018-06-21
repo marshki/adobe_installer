@@ -3,7 +3,7 @@
 # v.0.3
 
 #############################################################
-#### Adobe installer on OS X.       			 ####
+#### Adobe install & serialize on OS X.       	         ####
 #### Requires: Root privileges; access to Meyer network; #### 
 #### and adequate free disk space.                       ####  
 #############################################################
