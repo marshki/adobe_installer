@@ -115,7 +115,8 @@ function show_menu() {
         printf "%s\n" "  1. INSTALL ACROBAT DC"
         printf "%s\n" "  2. INSTALL ILLUSTRATOR"
         printf "%s\n" "  3. INSTALL PHOTOSHOP"
-        printf "%s\n" "  4. EXIT"
+        printf "%s\n" "  4. RUN SERIALIZER"
+	printf "%s\n" "  5. EXIT"
 }
 
 ###################
@@ -207,7 +208,7 @@ remove_cereal () {
 
 # Wrapper function 
 
-serializer () {
+run_serializer () {
   retrieve_cereal  
   unzip_cereal
   go_to_cereal
@@ -228,9 +229,10 @@ read_input() {
         1) run_installation "${ADOBE_ACROBAT[@]}";;
         2) run_installation "${ADOBE_ILLUSTRATOR[@]}" ;;
         3) run_installation "${ADOBE_PHOTOSHOP[@]}" ;;
-        4) printf "%s\n" "CIAO!"; exit 0 ;;
+        4) run_serializer ;;
+	5) printf "%s\n" "CIAO!"; exit 0 ;;
         *)
-           printf "%s\n" "SELECT AN OPTION (1 to 4):  "
+           printf "%s\n" "SELECT AN OPTION (1 to 5):  "
 
            pause
     esac
