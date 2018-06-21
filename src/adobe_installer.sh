@@ -10,6 +10,8 @@
 
 LOCAL_WEB="128.122.112.23"
 
+CEREAL="http://localweb.cns.nyu.edu/unixadmin/cc-mac/mac-licfile-fall17-new.zip"
+
 # Arrays follow this structure: 
 # ARRAY_NAME=(NAME "URL" name.zip mac-name-spr18 mac-name-spr18_Install.pkg)
 
@@ -81,6 +83,8 @@ ping_local_web() {
  fi
 }
 
+# Wrapper function 
+
 sanity_checks() {
   root_check
   check_disk_space
@@ -150,6 +154,8 @@ remove_installer() {
   rm -rv /Applications/{$3,$4}
 }
 
+# Wrapper function
+
 run_installation() {
   get_installer "$@"
   unzip_installer "$@"
@@ -157,6 +163,57 @@ run_installation() {
   remove_installer "$@"
   pause
 }
+
+####################
+#### Serializer ####
+####################
+
+# Retrieve .zip and place in /Applications 
+
+retrieve_cereal () {
+  printf "%s\n" "Retrieving Adobe cereal..."
+  curl --progress-bar --retry 3 --retry-delay 5 "$CEREAL" --output /Applications/cereal.zip
+}
+
+# Unzip .zip to /Applications
+
+unzip_cereal () {
+	printf "%s\n" "Unzipping cereal to Applications..."
+	unzip /Applications/cereal.zip -d /Applications
+} 
+
+# Change directory to serializer file 
+
+go_to_cereal () {
+	printf "%s\n" "Changing dirs to cereal..."
+	cd /Applications/mac-licfile-fall17-new
+}
+
+# Run serializer 
+
+serial_cereal () {
+	printf "%s\n" "Doing the cereal thing..."
+	./AdobeSerialization
+}
+
+# Remove .zip and serializer 
+
+remove_cereal () {
+	printf "%s\n" "Removing cereal. Nom, nom, nom..." 
+	rm -rv /Applications/{cereal.zip,mac-licfile-fall17-new}
+	printf "%s\n" "DONE."
+ 
+} 
+
+# Wrapper function 
+
+serializer () {
+  retrieve_cereal  
+  unzip_cereal
+  go_to_cereal
+  serial_cereal
+  remove_cereal
+} 
 
 ####################
 #### User Input ####
