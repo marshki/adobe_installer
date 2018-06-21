@@ -30,7 +30,7 @@ Grab the script from `/src` in this repository, then as root, call the script:
 
 `bash adobe_installer.sh`. From there, follow the on-screen prompt: 
 
-![ALT text](https://github.com/marshki/adobe_installer/blob/master/docs/adobe_installer.png "adobe-install"). 
+![ALT text](https://github.com/marshki/adobe_installer/blob/master/docs/adobe_install_menu.png "adobe-installer-menu"). 
 
 ## TODO 
 
