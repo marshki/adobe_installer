@@ -47,7 +47,7 @@ mac-photoshop-spr18_Install.pkg
 
 root_check() {
   if [ "$EUID" -ne "0" ] ; then
-    printf "%s\n" "ERROR: ROOT PRIVILEGES ARE REQUIRED TO CONTINUE. EXITING." >&2
+    printf "%s\\n" "ERROR: ROOT PRIVILEGES ARE REQUIRED TO CONTINUE. EXITING." >&2
     exit 1
 fi
 }
@@ -56,7 +56,7 @@ fi
 
 check_disk_space() {
   if [ $(df -lk /Applications |awk 'FNR == 2 {print $4}') -le 10485760 ]; then
-    printf "%s\n" "ERROR: NOT ENOUGH FREE DISK SPACE. EXITING." >&2
+    printf "%s\\n" "ERROR: NOT ENOUGH FREE DISK SPACE. EXITING." >&2
     exit 1
 fi
 }
@@ -65,7 +65,7 @@ fi
 
 curl_check() {
   if ! [ -x "$(command -v curl 2>/dev/null)" ]; then
-    printf "%s\n" "ERROR: CURL IS NOT INSTALLED. EXITING."  >&2
+    printf "%s\\n" "ERROR: CURL IS NOT INSTALLED. EXITING."  >&2
     exit 1
 fi
 }
@@ -73,12 +73,12 @@ fi
 # Is CNS local web available? If not, exit.
 
 ping_local_web() {
-  printf "%s\n" "PINGING CNS LOCAL WEB..."
+  printf "%s\\n" "PINGING CNS LOCAL WEB..."
 
   if ping -c 1 "$LOCAL_WEB" &> /dev/null; then
-    printf "%s\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
+    printf "%s\\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
   else
-    printf "%s\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
+    printf "%s\\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
     exit 1
  fi
 }
@@ -109,14 +109,14 @@ function pause() {
 # Display on-screen menu
 
 function show_menu() {
-    printf "%s\n" "------------------------------"
-    printf "%s\n" "  ADOBE INSTALLER MAIN MENU   "
-    printf "%s\n" "------------------------------"
-        printf "%s\n" "  1. INSTALL ACROBAT DC"
-        printf "%s\n" "  2. INSTALL ILLUSTRATOR"
-        printf "%s\n" "  3. INSTALL PHOTOSHOP"
-        printf "%s\n" "  4. RUN SERIALIZER"
-	printf "%s\n" "  5. EXIT"
+    printf "%s\\n" "------------------------------"
+    printf "%s\\n" "  ADOBE INSTALLER MAIN MENU   "
+    printf "%s\\n" "------------------------------"
+        printf "%s\\n" "  1. INSTALL ACROBAT DC"
+        printf "%s\\n" "  2. INSTALL ILLUSTRATOR"
+        printf "%s\\n" "  3. INSTALL PHOTOSHOP"
+        printf "%s\\n" "  4. RUN SERIALIZER"
+	printf "%s\\n" "  5. EXIT"
 }
 
 ###################
@@ -126,7 +126,7 @@ function show_menu() {
 # Download .zip to /Applications.
 
 get_installer() {
-  printf "%s\n" "RETRIEVING $1 INSTALLER..."
+  printf "%s\\n" "RETRIEVING $1 INSTALLER..."
 
   curl --progress-bar --retry 3 --retry-delay 5 $2 --output /Applications/$3
 }
@@ -134,7 +134,7 @@ get_installer() {
 # Unzip .zip to /Applications.
 
 unzip_installer() {
-  printf "%s\n" "UNZIPING $1 TO /Applications..."
+  printf "%s\\n" "UNZIPING $1 TO /Applications..."
 
   unzip /Applications/$3 -d /Applications
 }
@@ -142,7 +142,7 @@ unzip_installer() {
 # Run installer.
 
 install_installer() {
-  printf "%s\n" "INSTALLING $1..."
+  printf "%s\\n" "INSTALLING $1..."
 
   installer -pkg /Applications/$4/Build/$5 -target /
 }
@@ -150,7 +150,7 @@ install_installer() {
 # Remove .zip file and installer.
 
 remove_installer() {
-  printf "%s\n" "REMOVING $3 AND $4..."
+  printf "%s\\n" "REMOVING $3 AND $4..."
 
   rm -rv /Applications/{$3,$4}
 }
@@ -172,37 +172,37 @@ run_installation() {
 # Retrieve .zip and place in /Applications 
 
 retrieve_cereal () {
-  printf "%s\n" "Retrieving Adobe cereal..."
+  printf "%s\\n" "Retrieving Adobe cereal..."
   curl --progress-bar --retry 3 --retry-delay 5 "$CEREAL" --output /Applications/cereal.zip
 }
 
 # Unzip .zip to /Applications
 
 unzip_cereal () {
-	printf "%s\n" "Unzipping cereal to Applications..."
+	printf "%s\\n" "Unzipping cereal to Applications..."
 	unzip /Applications/cereal.zip -d /Applications
 } 
 
 # Change directory to serializer file 
 
 go_to_cereal () {
-	printf "%s\n" "Changing dirs to cereal..."
+	printf "%s\\n" "Changing dirs to cereal..."
 	cd /Applications/mac-licfile-fall17-new
 }
 
 # Run serializer 
 
 serial_cereal () {
-	printf "%s\n" "Doing the cereal thing..."
+	printf "%s\\n" "Doing the cereal thing..."
 	./AdobeSerialization
 }
 
 # Remove .zip and serializer 
 
 remove_cereal () {
-	printf "%s\n" "Removing cereal. Nom, nom, nom..." 
+	printf "%s\\n" "Removing cereal. Nom, nom, nom..." 
 	rm -rv /Applications/{cereal.zip,mac-licfile-fall17-new}
-	printf "%s\n" "DONE."
+	printf "%s\\n" "DONE."
  
 } 
 
@@ -231,9 +231,9 @@ read_input() {
         2) run_installation "${ADOBE_ILLUSTRATOR[@]}" ;;
         3) run_installation "${ADOBE_PHOTOSHOP[@]}" ;;
         4) run_serializer ;;
-	5) printf "%s\n" "CIAO!"; exit 0 ;;
+	5) printf "%s\\n" "CIAO!"; exit 0 ;;
         *)
-           printf "%s\n" "SELECT AN OPTION (1 to 5):  "
+           printf "%s\\n" "SELECT AN OPTION (1 to 5):  "
 
            pause
     esac
