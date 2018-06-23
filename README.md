@@ -34,8 +34,6 @@ Grab the script from `/src` in this repository, then as root, call the script:
 
 ## TODO 
 
-- [ ] Integrate serializer?
-
 - [ ] Option to install all packages and run serializer? 
  
 - [ ] Code review. Refactor where needed. 
