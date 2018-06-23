@@ -35,7 +35,6 @@ serial_cereal () {
 	./AdobeSerialization
 }
 
-
 # Remove .zip and serializer 
 
 remove_cereal () {
