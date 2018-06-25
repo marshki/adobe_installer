@@ -173,7 +173,7 @@ run_installation() {
 
 retrieve_cereal () {
   printf "%s\\n" "Retrieving Adobe cereal..."
-  curl --progress-bar --retry 3 --retry-delay 5 "$CEREAL" --output /Applications/cereal.zip
+  curl --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "$CEREAL" --output /Applications/cereal.zip
 }
 
 # Unzip .zip to /Applications
