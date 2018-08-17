@@ -89,7 +89,7 @@ sanity_checks() {
   root_check
   check_disk_space
   curl_check
-  ping_local_web
+  #ping_local_web
 }
 
 ######################
@@ -116,6 +116,7 @@ function show_menu() {
         printf "%s\\n" "  2. INSTALL ILLUSTRATOR"
         printf "%s\\n" "  3. INSTALL PHOTOSHOP"
         printf "%s\\n" "  4. RUN SERIALIZER"
+        #printf "%s\\n" "  5. Full Monty"
 	printf "%s\\n" "  5. EXIT"
 }
 
@@ -230,6 +231,7 @@ read_input() {
         2) run_installation "${ADOBE_ILLUSTRATOR[@]}" ;;
         3) run_installation "${ADOBE_PHOTOSHOP[@]}" ;;
         4) run_serializer ;;
+        #5) Fully Monty 
 	5) printf "%s\\n" "CIAO!"; exit 0 ;;
         *)
            printf "%s\\n" "SELECT AN OPTION (1 to 5):  "
