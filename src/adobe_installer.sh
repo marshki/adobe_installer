@@ -152,7 +152,7 @@ install_installer() {
 remove_installer() {
   printf "%s\\n" "REMOVING $3 AND $4..."
 
-  rm -rv /Applications/{$3,$4}
+  rm -rv /Applications/{"$3","$4"}
 }
 
 # Wrapper function
