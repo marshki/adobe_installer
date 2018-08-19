@@ -187,7 +187,7 @@ unzip_cereal () {
 
 go_to_cereal () {
 	printf "%s\\n" "Changing dirs to cereal..."
-	cd /Applications/mac-licfile-fall17-new
+	cd /Applications/mac-licfile-fall17-new || exit
 }
 
 # Run serializer 
