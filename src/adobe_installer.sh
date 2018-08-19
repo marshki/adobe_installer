@@ -162,7 +162,7 @@ run_installation() {
   unzip_installer "$@"
   install_installer "$@"
   remove_installer "$@"
-  pause
+  pause "$@"
 }
 
 ####################
