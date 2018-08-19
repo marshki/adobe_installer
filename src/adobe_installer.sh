@@ -144,7 +144,7 @@ unzip_installer() {
 install_installer() {
   printf "%s\\n" "INSTALLING $1..."
 
-  installer -pkg /Applications/$4/Build/$5 -target /
+  installer -pkg /Applications/"$4"/Build/"$5" -target /
 }
 
 # Remove .zip file and installer.
