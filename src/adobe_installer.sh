@@ -136,7 +136,7 @@ get_installer() {
 unzip_installer() {
   printf "%s\\n" "UNZIPING $1 TO /Applications..."
 
-  unzip /Applications/$3 -d /Applications
+  unzip /Applications/"$3" -d /Applications
 }
 
 # Run installer.
