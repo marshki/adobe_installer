@@ -224,7 +224,7 @@ run_serializer () {
 
 read_input() {
     local c
-    read -p "ENTER YOUR CHOICE [ 1-5 ]:  " c
+    read -rp "ENTER YOUR CHOICE [ 1-5 ]:  " c
     case $c in
         1) run_installation "${ADOBE_ACROBAT[@]}";;
         2) run_installation "${ADOBE_ILLUSTRATOR[@]}" ;;
