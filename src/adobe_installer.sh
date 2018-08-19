@@ -89,7 +89,7 @@ sanity_checks() {
   root_check
   check_disk_space
   curl_check
-  ping_local_web
+  #ping_local_web
 }
 
 ######################
@@ -101,7 +101,7 @@ sanity_checks() {
 # $1-> Message (optional).
 
 function pause() {
-    local message="$@"
+    local message="$*"
     [ -z "$message" ] && message="KAPOW! PROCESS DONE. PRESS [Enter] KEY TO CONTINUE:  "
     read -rp "$message" readEnterKey
 }
