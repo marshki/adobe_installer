@@ -172,35 +172,35 @@ run_installation() {
 # Retrieve .zip and place in /Applications 
 
 retrieve_cereal () {
-  printf "%s\\n" "Retrieving Adobe cereal..."
+  printf "%s\\n" "RETRIEVING ADOBE CEREAL..."
   curl --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "$CEREAL" --output /Applications/cereal.zip
 }
 
 # Unzip .zip to /Applications
 
 unzip_cereal () {
-	printf "%s\\n" "Unzipping cereal to Applications..."
+	printf "%s\\n" "UNZIPPING CEREAL TO /Applications..." 
 	unzip /Applications/cereal.zip -d /Applications
 } 
 
 # Change directory to serializer file 
 
 go_to_cereal () {
-	printf "%s\\n" "Changing dirs to cereal..."
+	printf "%s\\n" "CHANGING DIRS TO CEREAL..."
 	cd /Applications/mac-licfile-fall17-new || exit
 }
 
 # Run serializer 
 
 serial_cereal () {
-	printf "%s\\n" "Doing the cereal thing..."
+	printf "%s\\n" "DOING THE CEREAL THING..."
 	./AdobeSerialization
 }
 
 # Remove .zip and serializer 
 
 remove_cereal () {
-	printf "%s\\n" "Removing cereal. Nom, nom, nom..." 
+	printf "%s\\n" "REMOVING CEREAL. NOM, NOM, NOM..." 
 	rm -rv /Applications/{cereal.zip,mac-licfile-fall17-new}
  
 } 
