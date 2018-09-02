@@ -103,7 +103,7 @@ sanity_checks() {
 function pause() {
     local message="$*"
     [ -z "$message" ] && message="KAPOW! PROCESS DONE. PRESS [Enter] KEY TO CONTINUE:  "
-    read -rp "$message" readEnterKey
+    read -rp "$message" 
 }
 
 # Display on-screen menu
