@@ -89,7 +89,7 @@ sanity_checks() {
   root_check
   check_disk_space
   curl_check
-  #ping_local_web
+  #ping_local_web --> turned off ping on local web; need to write a different test 
 }
 
 ######################
