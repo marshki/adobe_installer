@@ -18,7 +18,7 @@ __Pre-flight checklist__ (the script will check for the following conditions):
 
   * root privileges  
 
-  * adeqaute free disk space (10 GBs)
+  * adequate free disk space (10 GBs)
 
   * [curl](https://curl.haxx.se/docs/manpage.html)
 
@@ -35,6 +35,8 @@ Grab the script from `/src` in this repository, then as root, call the script:
 ## TODO 
 
 - [ ] Option to install all packages and run serializer? 
+
+- [ ] Is disk space check accurate? Need to check. 
  
 - [ ] Code review. Refactor where needed. 
 
