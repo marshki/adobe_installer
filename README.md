@@ -40,6 +40,8 @@ Grab the script from `/src` in this repository, then as root, call the script:
  
 - [ ] Code review. Refactor where needed. 
 
+- [ ] FYI on how to bundle Adobe initially (tar, etc.)
+
 ## History 
 v.0.3 2018.05.12
 
