@@ -14,6 +14,22 @@ Written and tested to run on currently-supported versions of Mac OS X.
 
 ## Getting Started 
 
+**For sysadmins who want to replicate this process**, we assume that you: 
+
+- [ ] are affiliated with an institution that has a valid license agreement with Adobe; 
+
+- [ ] can access a networked filed server; and 
+
+- [ ] deployed Adboe locally on a `Mac OS X' client.
+
+On your local client, tar up the Adobe install with, e.g.: 
+
+`zip -r mac-acrobatdc-spr18.zip Adobe\ Acrobat\ DC`
+
+and place the file on your web server for distribution.
+
+**For sysadmin** AND **end users**: 
+
 __Pre-flight checklist__ (the script will check for the following conditions): 
 
   * root privileges  
@@ -35,12 +51,8 @@ Grab the script from `/src` in this repository, then as root, call the script:
 ## TODO 
 
 - [ ] Option to install all packages and run serializer? 
-
-- [ ] Is disk space check accurate? Need to check. 
  
 - [ ] Code review. Refactor where needed. 
-
-- [ ] FYI on how to bundle Adobe initially (tar, etc.)
 
 ## History 
 v.0.3 2018.05.12
