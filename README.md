@@ -48,8 +48,6 @@ Grab the script from `/src` in this repository, then as root, call the script:
 
 ![ALT text](https://github.com/marshki/adobe_installer/blob/master/docs/adobe_install_menu.png "menu"). 
 
-[![asciicast](https://asciinema.org/a/Zp2N41qCUsWUV7EEuec25Sa3s.png)](https://asciinema.org/a/Zp2N41qCUsWUV7EEuec25Sa3s)
-
 ## TODO 
 
 - [ ] Option to install all packages and run serializer? 
