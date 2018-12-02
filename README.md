@@ -18,7 +18,7 @@ Written and tested to run on currently-supported versions of Mac OS X.
 
 - [ ] are affiliated with an institution that has a valid license agreement with Adobe; 
 
-- [ ] can access a networked filed server; and 
+- [ ] can access a networked file server; and 
 
 - [ ] deployed Adboe locally on a `Mac OS X' client.
 
@@ -42,9 +42,9 @@ __Pre-flight checklist__ (the script will check for the following conditions):
 
 __Liftoff:__
 
-Grab the script from `/src` in this repository, then as root, call the script: 
+Grab the script from `/src` in this repository, then call the script (*[caffeinate](https://ss64.com/osx/caffeinate.html) will keep the computer awake during the installation*): 
 
-`bash adobe_installer.sh`. From there, follow the on-screen prompt: 
+`caffeinate sudo bash adobe_installer.sh`. From there, follow the on-screen prompt: 
 
 ![ALT text](https://github.com/marshki/adobe_installer/blob/master/docs/adobe_install_menu.png "menu"). 
 
