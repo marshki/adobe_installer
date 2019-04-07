@@ -13,6 +13,7 @@ and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the 
 Written and tested to run on currently-supported versions of Mac OS X. 
 
 ## E-Z Install
+**OS X:** `curl https://raw.githubusercontent.com/marshki/adobe_installer/master/src/adobe_installer.sh |caffeinate sudo bash` 
 
 ## Getting Started 
 
