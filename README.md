@@ -14,10 +14,6 @@ Written and tested to run on currently-supported versions of Mac OS X.
 
 ## E-Z Install
 
-**OS X:** `curl https://raw.githubusercontent.com/marshki/matlab_installer/master/src/os_x/matlab_install_osx.sh |caffeinate sudo bash`
-
-**LINUX:** `curl https://raw.githubusercontent.com/marshki/matlab_installer/master/src/linux/matlab_install_linux.sh |sudo bash`
-
 ## Getting Started 
 
 **For sysadmins who want to replicate this process**, we assume that you: 
