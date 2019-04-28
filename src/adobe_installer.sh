@@ -1,10 +1,11 @@
 #!/bin/bash
 # mjk235 [at] nyu [dot] edu --2018.04.25
-# v.0.3
 
-#### Adobe install & serialize on OS X.       	         ####
-#### Requires: Root privileges; access to Meyer network; #### 
-#### and adequate free disk space.                       ####  
+#====================================================
+# Adobe install & serialize on OS X.       	         
+# Requires: Root privileges; access to Meyer network; 
+# and adequate free disk space.                        
+#====================================================
 
 LOCAL_WEB="http://localweb.cns.nyu.edu/cc-2018-mac/mac-acrobatdc-spr18.zip"
 
@@ -37,7 +38,9 @@ mac-photoshop-spr18
 mac-photoshop-spr18_Install.pkg
 )
 
-#### Sanity checks  ####
+#==============
+# Sanity checks
+#==============
 
 # Is current UID 0? If not, exit.
 
@@ -90,7 +93,9 @@ sanity_checks() {
   local_web_check
 }
 
-#### Display Menu ####
+#=============
+# Display Menu
+#=============
 
 # Display pause prompt.
 # Suspend processing of script; display message prompting user to press [Enter] key to continue.
@@ -115,7 +120,9 @@ function show_menu() {
 	printf "%s\\n" "  5. EXIT"
 }
 
-#### Install-r #### 
+#==========
+# Install-r 
+#==========
 
 # Download .zip to /Applications.
 
@@ -159,7 +166,9 @@ run_installation() {
   pause #"$@"
 }
 
-#### Serializer ####
+#===========
+# Serializer
+#===========
 
 # Retrieve .zip and place in /Applications 
 
@@ -208,9 +217,11 @@ run_serializer () {
   pause
 } 
 
-#### User Input ####
+#===========
+# User Input
+#=========== 
 
-#### Get input via the keyboard and make a decision using case...esac ####
+# Get input via the keyboard and make a decision using case...esac 
 
 read_input() {
     local c
@@ -228,7 +239,9 @@ read_input() {
     esac
 }
 
-#### Main ####
+#=====
+# Main
+#=====
 
 main () {
 
