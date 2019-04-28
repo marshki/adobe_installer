@@ -1,9 +1,9 @@
 #!/bin/bash
 # mjk235 [at] nyu [dot] edu
 
-##########################
-#### Adobe Serializer ####
-##########################
+#=================
+# Adobe Serializer 
+#=================
 
 CEREAL="http://localweb.cns.nyu.edu/unixadmin/cc-mac/mac-licfile-fall17-new.zip"
 
