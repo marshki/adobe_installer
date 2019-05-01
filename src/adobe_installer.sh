@@ -163,7 +163,7 @@ run_installation() {
   unzip_installer "$@"
   install_installer "$@"
   remove_installer "$@"
-  pause #"$@"
+  pause 
 }
 
 #===========
@@ -214,7 +214,7 @@ run_serializer () {
   go_to_cereal
   serial_cereal
   remove_cereal
-  pause
+  pause 
 } 
 
 #===========
@@ -235,7 +235,7 @@ read_input() {
         *)
            printf "%s\\n" "SELECT AN OPTION (1 to 5):  "
 
-           pause
+           pause "$@"
     esac
 }
 
