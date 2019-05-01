@@ -117,7 +117,8 @@ show_menu() {
         printf "%s\\n" "  2. INSTALL ILLUSTRATOR"
         printf "%s\\n" "  3. INSTALL PHOTOSHOP"
         printf "%s\\n" "  4. RUN SERIALIZER"
-	printf "%s\\n" "  5. EXIT"
+	printf "%s\\n" "  5. INSTALL ALL"
+        printf "%s\\n" "  6. EXIT"
 }
 
 #==========
@@ -156,7 +157,7 @@ remove_installer() {
   rm -rv /Applications/{"$3","$4"}
 }
 
-# Wrapper function
+# Wrapper functions
 
 run_installation() {
   get_installer "$@"
@@ -164,6 +165,13 @@ run_installation() {
   install_installer "$@"
   remove_installer "$@"
   pause 
+}
+
+run_installation_no_pause() {
+  get_installer "$@"
+  unzip_installer "$@"
+  install_installer "$@"
+  remove_installer "$@"
 }
 
 #===========
@@ -225,13 +233,16 @@ run_serializer () {
 
 read_input() {
     local c
-    read -rp "ENTER YOUR CHOICE [ 1-5 ]:  " c
+    read -rp "ENTER YOUR CHOICE [ 1-6 ]:  " c
     case $c in
         1) run_installation "${ADOBE_ACROBAT[@]}";;
         2) run_installation "${ADOBE_ILLUSTRATOR[@]}" ;;
         3) run_installation "${ADOBE_PHOTOSHOP[@]}" ;;
         4) run_serializer ;;
-	5) printf "%s\\n" "CIAO!"; exit 0 ;;
+	5) run_installation_no_pause "${ADOBE_ACROBAT[@]}"; 
+           run_installation_no_pause "${ADOBE_ILLUSTRATOR[@]}" ; 
+           run_installation_no_pause "${ADOBE_PHOTOSHOP[@]}" ;;
+        6) printf "%s\\n" "CIAO!"; exit 0 ;;
         *)
            printf "%s\\n" "SELECT AN OPTION (1 to 5):  "
 
@@ -254,4 +265,5 @@ sanity_checks
       read_input "$@"
   done
 }
+
 main "$@"
