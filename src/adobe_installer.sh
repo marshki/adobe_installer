@@ -251,7 +251,7 @@ sanity_checks
   do
       clear
       show_menu
-      read_input
+      read_input "$@"
   done
 }
 main "$@"
