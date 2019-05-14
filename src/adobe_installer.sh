@@ -7,7 +7,7 @@
 # and adequate free disk space.                        
 #====================================================
 
-LOCAL_WEB="http://localweb.cns.nyu.edu/cc-2018-mac/mac-acrobatdc-spr18.zip"
+LOCAL_WEB="http://localweb.cns.nyu.edu/mac/.local/acrobat.tgz"
 
 CEREAL="http://localweb.cns.nyu.edu/unixadmin/cc-mac/mac-licfile-fall17-new.zip"
 
@@ -16,7 +16,7 @@ CEREAL="http://localweb.cns.nyu.edu/unixadmin/cc-mac/mac-licfile-fall17-new.zip"
 
 ADOBE_ACROBAT=(
 ACROBAT
-"http://localweb.cns.nyu.edu/cc-2018-mac/mac-acrobatdc-spr18.zip"
+"http://localweb.cns.nyu.edu/mac/.local/acrobat.tgz" 
 acrobat.zip
 mac-acrobatdc-spr18
 mac-acrobatdc-spr18_Install.pkg
@@ -24,7 +24,7 @@ mac-acrobatdc-spr18_Install.pkg
 
 ADOBE_ILLUSTRATOR=(
 ILLUSTRATOR
-"http://localweb.cns.nyu.edu/cc-2018-mac/mac-illustrator-spr18.zip"
+"http://localweb.cns.nyu.edu/mac/.local/illustrator.tgz" 
 illustrator.zip
 mac-illustrator-spr18
 mac-illustrator-spr18_Install.pkg
@@ -32,7 +32,7 @@ mac-illustrator-spr18_Install.pkg
 
 ADOBE_PHOTOSHOP=(
 PHOTOSHOP
-"http://localweb.cns.nyu.edu/cc-2018-mac/mac-photoshop-spr18.zip"
+"http://localweb.cns.nyu.edu/mac/.local/photoshop.tgz"
 photoshop.zip
 mac-photoshop-spr18
 mac-photoshop-spr18_Install.pkg
