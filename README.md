@@ -53,9 +53,8 @@ Grab the script from `/src` in this repository, then call the script (*[caffeina
 
 ## TODO 
 
-- [ ] Option to install all packages and run serializer? 
+- [ ] Change zip commands to tar --> packaging mechanism changed!  
  
-- [ ] Code review. Refactor where needed. 
 
 ## History 
 v.0.3 2018.05.12
