@@ -18,24 +18,24 @@ ADOBE_ACROBAT=(
 ACROBAT
 "http://localweb.cns.nyu.edu/mac/.local/acrobat.tgz" 
 acrobat.tgz
-mac-acrobatdc-spr18
-mac-acrobatdc-spr18_Install.pkg
+mac-acrobatdc-fall18
+mac-acrobatdc-fall18_Install.pkg
 )
 
 ADOBE_ILLUSTRATOR=(
 ILLUSTRATOR
 "http://localweb.cns.nyu.edu/mac/.local/illustrator.tgz" 
 illustrator.tgz
-mac-illustrator-spr18
-mac-illustrator-spr18_Install.pkg
+mac-illustrator-fall18
+mac-illustrator-fall18_Install.pkg
 )
 
 ADOBE_PHOTOSHOP=(
 PHOTOSHOP
 "http://localweb.cns.nyu.edu/mac/.local/photoshop.tgz"
 photoshop.tgz
-mac-photoshop-spr18
-mac-photoshop-spr18_Install.pkg
+mac-photoshop-fall18
+mac-photoshop-fall18_Install.pkg
 )
 
 #==============
