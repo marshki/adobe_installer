@@ -17,7 +17,7 @@ CEREAL="http://localweb.cns.nyu.edu/unixadmin/cc-mac/mac-licfile-fall17-new.zip"
 ADOBE_ACROBAT=(
 ACROBAT
 "http://localweb.cns.nyu.edu/mac/.local/acrobat.tgz" 
-acrobat.zip
+acrobat.tgz
 mac-acrobatdc-spr18
 mac-acrobatdc-spr18_Install.pkg
 )
@@ -25,7 +25,7 @@ mac-acrobatdc-spr18_Install.pkg
 ADOBE_ILLUSTRATOR=(
 ILLUSTRATOR
 "http://localweb.cns.nyu.edu/mac/.local/illustrator.tgz" 
-illustrator.zip
+illustrator.tgz
 mac-illustrator-spr18
 mac-illustrator-spr18_Install.pkg
 )
@@ -33,7 +33,7 @@ mac-illustrator-spr18_Install.pkg
 ADOBE_PHOTOSHOP=(
 PHOTOSHOP
 "http://localweb.cns.nyu.edu/mac/.local/photoshop.tgz"
-photoshop.zip
+photoshop.tgz
 mac-photoshop-spr18
 mac-photoshop-spr18_Install.pkg
 )
