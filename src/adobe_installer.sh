@@ -127,21 +127,21 @@ show_menu() {
 
 # Download .tgz to /Applications.
 
-get_installer() {
+get_tar() {
   printf "%s\\n" "RETRIEVING $1 INSTALLER..."
 
   curl --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "$2" --output /Applications/"$3"
 }
 
-# Unpack tarball to /Applications.
+# Unpack tarball to /Applications, which installs Adobe app
 
-untar_installer() {
+untar_tar() {
   printf "%s\\n" "UNTARRING $1 TO /Applications..."
 
   tar --extract --gzip -v --file=/Applications/"$3" --directory=/Applications
 }
 
-# Run installer.
+# Run installer. 
 
 install_installer() {
   printf "%s\\n" "INSTALLING $1..."
@@ -152,7 +152,7 @@ install_installer() {
 # Remove .tgz file and installer.
 
 remove_installer() {
-  printf "%s\\n" "REMOVING $3 AND $4..."
+  printf "%s\\n" "REMOVING $3..."
 
   rm -rv /Applications/{"$3","$4"}
 }
@@ -160,16 +160,16 @@ remove_installer() {
 # Wrapper functions
 
 run_installation() {
-  get_installer "$@"
-  untar_installer "$@"
+  get_tar "$@"
+  untar_tar "$@"
   install_installer "$@"
   remove_installer "$@"
   pause 
 }
 
 run_installation_no_pause() {
-  get_installer "$@"
-  untar_installer "$@"
+  get_tar "$@"
+  untar_tar "$@"
   install_installer "$@"
   remove_installer "$@"
 }
