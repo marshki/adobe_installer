@@ -12,7 +12,7 @@ LOCAL_WEB="http://localweb.cns.nyu.edu/mac/.local/acrobat.tgz"
 CEREAL="http://localweb.cns.nyu.edu/unixadmin/cc-mac/mac-licfile-fall17-new.zip"
 
 # Arrays follow this structure: 
-# ARRAY_NAME=(NAME "URL" name.zip mac-name-spr18 mac-name-spr18_Install.pkg)
+# ARRAY_NAME=(NAME "URL" name.tgz mac-name-spr18 mac-name-spr18_Install.pkg)
 
 ADOBE_ACROBAT=(
 ACROBAT
@@ -125,7 +125,7 @@ show_menu() {
 # Install-r 
 #==========
 
-# Download .zip to /Applications.
+# Download .tgz to /Applications.
 
 get_installer() {
   printf "%s\\n" "RETRIEVING $1 INSTALLER..."
@@ -133,12 +133,12 @@ get_installer() {
   curl --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "$2" --output /Applications/"$3"
 }
 
-# Unzip .zip to /Applications.
+# Unpack tarball to /Applications.
 
-unzip_installer() {
-  printf "%s\\n" "UNZIPING $1 TO /Applications..."
+untar_installer() {
+  printf "%s\\n" "UNTARRING $1 TO /Applications..."
 
-  unzip /Applications/"$3" -d /Applications
+  tar --extract --gzip -v --file=/Applications/"$3" --directory=/Applications
 }
 
 # Run installer.
@@ -149,7 +149,7 @@ install_installer() {
   installer -pkg /Applications/"$4"/Build/"$5" -target /
 }
 
-# Remove .zip file and installer.
+# Remove .tgz file and installer.
 
 remove_installer() {
   printf "%s\\n" "REMOVING $3 AND $4..."
@@ -161,7 +161,7 @@ remove_installer() {
 
 run_installation() {
   get_installer "$@"
-  unzip_installer "$@"
+  untar_installer "$@"
   install_installer "$@"
   remove_installer "$@"
   pause 
@@ -169,7 +169,7 @@ run_installation() {
 
 run_installation_no_pause() {
   get_installer "$@"
-  unzip_installer "$@"
+  untar_installer "$@"
   install_installer "$@"
   remove_installer "$@"
 }
