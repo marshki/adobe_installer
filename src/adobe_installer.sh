@@ -20,6 +20,7 @@ ACROBAT
 acrobat.tgz
 mac-acrobatdc-fall18
 mac-acrobatdc-fall18_Install.pkg
+acrobat
 )
 
 ADOBE_ILLUSTRATOR=(
@@ -28,6 +29,7 @@ ILLUSTRATOR
 illustrator.tgz
 mac-illustrator-fall18
 mac-illustrator-fall18_Install.pkg
+illustrator
 )
 
 ADOBE_PHOTOSHOP=(
@@ -36,6 +38,7 @@ PHOTOSHOP
 photoshop.tgz
 mac-photoshop-fall18
 mac-photoshop-fall18_Install.pkg
+photoshop
 )
 
 #==============
