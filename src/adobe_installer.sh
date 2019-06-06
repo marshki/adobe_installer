@@ -152,12 +152,12 @@ install_installer() {
   installer -pkg /Applications/"$4"/Build/"$5" -target /
 }
 
-# Remove .tgz file and installer.
+# Remove .tgz file and installer .pkgs.
 
 remove_installer() {
   printf "%s\\n" "REMOVING $3..."
 
-  rm -rv /Applications/{"$3","$4"}
+  rm -rv /Applications/{"$3","$4","$6"}
 }
 
 # Wrapper functions
