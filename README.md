@@ -24,11 +24,11 @@ Written and tested to run on currently-supported versions of Mac OS X.
 
 - [ ] can access a networked file server; and 
 
-- [ ] deployed Adboe locally on a `Mac OS X' client.
+- [ ] have an Adboe installer for `Mac OS X' clients.
 
-On your local client, tar up the Adobe install with, e.g.: 
+On your local client, zip up the Adobe installer with, e.g.: 
 
-`zip -r mac-acrobatdc-spr18.zip Adobe\ Acrobat\ DC`
+`zip -r mac-acrobatdc-spr18.zip acrobat`
 
 and place the file on your web server for distribution.
 
@@ -54,11 +54,8 @@ Grab the script from `/src` in this repository, then call the script (*[caffeina
 
 ## TODO 
 
-- [ ] Change zip commands to tar --> packaging mechanism changed!  
- 
-
 ## History 
-v.0.3 2018.05.12
+v.0.4 2019.06.08
 
 ## License 
 [License](https://github.com/marshki/adobe_installer/blob/master/LICENSE)
