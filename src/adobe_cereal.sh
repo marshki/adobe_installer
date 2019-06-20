@@ -5,7 +5,7 @@
 # Adobe Serializer 
 #=================
 
-CEREAL="http://localweb.cns.nyu.edu/unixadmin/cc-mac/mac-licfile-fall17-new.zip"
+CEREAL="https://localweb.cns.nyu.edu/unixadmin/cc-mac/mac-licfile-fall17-new.zip"
 
 # Retrieve .zip and place in /Applications 
 
