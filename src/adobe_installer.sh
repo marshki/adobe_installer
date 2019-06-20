@@ -7,16 +7,16 @@
 # and adequate free disk space.                        
 #====================================================
 
-LOCAL_WEB="http://localweb.cns.nyu.edu/mac/.local/acrobat.tgz"
+LOCAL_WEB="https://localweb.cns.nyu.edu/mac/.local/acrobat.tgz"
 
-CEREAL="http://localweb.cns.nyu.edu/unixadmin/cc-mac/mac-licfile-fall17-new.zip"
+CEREAL="https://localweb.cns.nyu.edu/unixadmin/cc-mac/mac-licfile-fall17-new.zip"
 
 # Arrays follow this structure: 
 # ARRAY_NAME=(NAME "URL" name.tgz mac-name-spr18 mac-name-spr18_Install.pkg)
 
 ADOBE_ACROBAT=(
 ACROBAT
-"http://localweb.cns.nyu.edu/mac/.local/acrobat.tgz" 
+"https://localweb.cns.nyu.edu/mac/.local/acrobat.tgz" 
 acrobat.tgz
 mac-acrobatdc-fall18
 mac-acrobatdc-fall18_Install.pkg
@@ -25,7 +25,7 @@ acrobat.pkg
 
 ADOBE_ILLUSTRATOR=(
 ILLUSTRATOR
-"http://localweb.cns.nyu.edu/mac/.local/illustrator.tgz" 
+"https://localweb.cns.nyu.edu/mac/.local/illustrator.tgz" 
 illustrator.tgz
 mac-illustrator-fall18
 mac-illustrator-fall18_Install.pkg
@@ -34,7 +34,7 @@ illustrator.pkg
 
 ADOBE_PHOTOSHOP=(
 PHOTOSHOP
-"http://localweb.cns.nyu.edu/mac/.local/photoshop.tgz"
+"https://localweb.cns.nyu.edu/mac/.local/photoshop.tgz"
 photoshop.tgz
 mac-photoshop-fall18
 mac-photoshop-fall18_Install.pkg
