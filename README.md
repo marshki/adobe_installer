@@ -12,7 +12,7 @@ and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the 
 
 Written and tested to run on currently-supported versions of Mac OS X. 
 
-**__On 11.30.2019, NYU will pull Adobe serializers, thereby rendering this script invalid.__**
+**On 11.30.2019, NYU will pull Adobe serializers, thereby rendering this script invalid.**
 
 ## E-Z Install
 **OS X:** 
