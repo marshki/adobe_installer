@@ -12,6 +12,8 @@ and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the 
 
 Written and tested to run on currently-supported versions of Mac OS X. 
 
+**__On 11.30.2019, NYU will pull Adobe serializers, thereby rendering this script invalid.__**
+
 ## E-Z Install
 **OS X:** 
 `curl --remote-name https://raw.githubusercontent.com/marshki/adobe_installer/master/src/adobe_installer.sh && caffeinate sudo bash adobe_installer.sh` 
@@ -51,8 +53,6 @@ Grab the script from `/src` in this repository, then call the script (*[caffeina
 `caffeinate sudo bash adobe_installer.sh`. From there, follow the on-screen prompt: 
 
 ![ALT text](https://github.com/marshki/adobe_installer/blob/master/docs/adobe_install_menu.png "menu"). 
-
-## TODO 
 
 ## History 
 v.0.4 2019.06.08
