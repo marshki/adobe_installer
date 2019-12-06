@@ -12,7 +12,8 @@ and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the 
 
 Written and tested to run on currently-supported versions of Mac OS X. 
 
-**On 11.30.2019, NYU will pull Adobe serializers, thereby rendering this script invalid.**
+**On 11.30.2019, NYU transitioned from serialized licensing to a subscription-based licensing model. 
+Shared-device licesning (SDL) requires a valid NYU Net ID for authentication.**
 
 ## E-Z Install
 **OS X:** 
