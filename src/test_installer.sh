@@ -33,7 +33,7 @@ PHOTOSHOP
 "https://localweb.cns.nyu.edu/mac/.local/photoshop.tgz"
 photoshop.tgz
 photoshop
-photoshop-2019_Install.pkg
+photoshop-10-2018_Install.pkg
 )
 
 #==============
