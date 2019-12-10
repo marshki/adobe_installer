@@ -25,7 +25,7 @@ ILLUSTRATOR
 "https://localweb.cns.nyu.edu/mac/.local/illustrator.tgz" 
 illustrator.tgz
 illustrator
-illustrator-2019_Install.pkg
+illustrator-10-2018_Install.pkg
 )
 
 ADOBE_PHOTOSHOP=(
