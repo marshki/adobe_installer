@@ -1,5 +1,5 @@
 #!/bin/bash
-# mjk235 [at] nyu [dot] edu --2018.04.25
+# mjk235 [at] nyu [dot] edu --2019.12.10
 
 #====================================================
 # Adobe install & serialize on OS X.       	         
