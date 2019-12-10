@@ -1,5 +1,5 @@
 #!/bin/bash
-# mjk235 [at] nyu [dot] edu --2018.04.25
+# mjk235 [at] nyu [dot] edu --2019.12.10
 
 #====================================================
 # Adobe install & serialize on OS X.       	         
@@ -9,36 +9,31 @@
 
 LOCAL_WEB="https://localweb.cns.nyu.edu/mac/.local/acrobat.tgz"
 
-CEREAL="https://localweb.cns.nyu.edu/unixadmin/cc-mac/mac-licfile-fall17-new.zip"
-
 # Arrays follow this structure: 
-# ARRAY_NAME=(NAME "URL" name.tgz mac-name-spr18 mac-name-spr18_Install.pkg)
+# ARRAY_NAME=(NAME "URL" name.tgz name name-2019_Install.pkg)
 
 ADOBE_ACROBAT=(
 ACROBAT
 "https://localweb.cns.nyu.edu/mac/.local/acrobat.tgz" 
 acrobat.tgz
-mac-acrobatdc-fall18
-mac-acrobatdc-fall18_Install.pkg
-acrobat.pkg
+acrobat
+acrobat-2019_Install.pkg
 )
 
 ADOBE_ILLUSTRATOR=(
 ILLUSTRATOR
 "https://localweb.cns.nyu.edu/mac/.local/illustrator.tgz" 
 illustrator.tgz
-mac-illustrator-fall18
-mac-illustrator-fall18_Install.pkg
-illustrator.pkg
+illustrator
+illustrator-10-2018_Install.pkg
 )
 
 ADOBE_PHOTOSHOP=(
 PHOTOSHOP
 "https://localweb.cns.nyu.edu/mac/.local/photoshop.tgz"
 photoshop.tgz
-mac-photoshop-fall18
-mac-photoshop-fall18_Install.pkg
-photoshop.pkg
+photoshop
+photoshop-10-2018_Install.pkg
 )
 
 #==============
@@ -119,9 +114,8 @@ show_menu() {
         printf "%s\\n" "  1. INSTALL ACROBAT DC"
         printf "%s\\n" "  2. INSTALL ILLUSTRATOR"
         printf "%s\\n" "  3. INSTALL PHOTOSHOP"
-        printf "%s\\n" "  4. RUN SERIALIZER"
-	printf "%s\\n" "  5. INSTALL ALL"
-        printf "%s\\n" "  6. EXIT"
+	printf "%s\\n" "  4. INSTALL ALL"
+        printf "%s\\n" "  5. EXIT"
 }
 
 #==========
@@ -157,7 +151,7 @@ install_installer() {
 remove_installer() {
   printf "%s\\n" "REMOVING $3..."
 
-  rm -rv /Applications/{"$3","$4","$6"}
+  rm -rv /Applications/{"$3","$4"}
 }
 
 # Wrapper functions
@@ -178,57 +172,6 @@ run_installation_no_pause() {
 }
 
 #===========
-# Serializer
-#===========
-
-# Retrieve .zip and place in /Applications 
-
-retrieve_cereal () {
-  printf "%s\\n" "RETRIEVING ADOBE CEREAL..."
-  curl --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "$CEREAL" --output /Applications/cereal.zip
-}
-
-# Unzip .zip to /Applications
-
-unzip_cereal () {
-	printf "%s\\n" "UNZIPPING CEREAL TO /Applications..." 
-	unzip /Applications/cereal.zip -d /Applications
-} 
-
-# Change directory to serializer file 
-
-go_to_cereal () {
-	printf "%s\\n" "CHANGING DIRS TO CEREAL..."
-	cd /Applications/mac-licfile-fall17-new || exit
-}
-
-# Run serializer 
-
-serial_cereal () {
-	printf "%s\\n" "DOING THE CEREAL THING..."
-	./AdobeSerialization
-}
-
-# Remove .zip and serializer 
-
-remove_cereal () {
-	printf "%s\\n" "REMOVING CEREAL. NOM, NOM, NOM..." 
-	rm -rv /Applications/{cereal.zip,mac-licfile-fall17-new}
- 
-} 
-
-# Wrapper function 
-
-run_serializer () {
-  retrieve_cereal  
-  unzip_cereal
-  go_to_cereal
-  serial_cereal
-  remove_cereal
-  pause 
-} 
-
-#===========
 # User Input
 #=========== 
 
@@ -236,16 +179,15 @@ run_serializer () {
 
 read_input() {
     local c
-    read -rp "ENTER YOUR CHOICE [ 1-6 ]:  " c
+    read -rp "ENTER YOUR CHOICE [ 1-5 ]:  " c
     case $c in
         1) run_installation "${ADOBE_ACROBAT[@]}";;
         2) run_installation "${ADOBE_ILLUSTRATOR[@]}" ;;
         3) run_installation "${ADOBE_PHOTOSHOP[@]}" ;;
-        4) run_serializer ;;
-	5) run_installation_no_pause "${ADOBE_ACROBAT[@]}"; 
+	4) run_installation_no_pause "${ADOBE_ACROBAT[@]}"; 
            run_installation_no_pause "${ADOBE_ILLUSTRATOR[@]}" ; 
            run_installation_no_pause "${ADOBE_PHOTOSHOP[@]}" ;;
-        6) printf "%s\\n" "CIAO!"; exit 0 ;;
+        5) printf "%s\\n" "CIAO!"; exit 0 ;;
         *)
            printf "%s\\n" "SELECT AN OPTION (1 to 5):  "
 
