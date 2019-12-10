@@ -10,32 +10,30 @@
 LOCAL_WEB="https://localweb.cns.nyu.edu/mac/.local/acrobat.tgz"
 
 # Arrays follow this structure: 
-# ARRAY_NAME=(NAME "URL" name.tgz mac-name-spr18 mac-name-spr18_Install.pkg)
+# ARRAY_NAME=(NAME "URL" name.tgz name name-2019_Install.pkg)
 
 ADOBE_ACROBAT=(
 ACROBAT
 "https://localweb.cns.nyu.edu/mac/.local/acrobat.tgz" 
 acrobat.tgz
-mac-acrobatdc-fall18
-mac-acrobatdc-fall18_Install.pkg
-acrobat.pkg
+acrobat
+acrobat-2019_Install.pkg
 )
 
 ADOBE_ILLUSTRATOR=(
 ILLUSTRATOR
 "https://localweb.cns.nyu.edu/mac/.local/illustrator.tgz" 
 illustrator.tgz
-mac-illustrator-fall18
-mac-illustrator-fall18_Install.pkg
-illustrator.pkg
+illustator
+illustrator-2019_Install.pkg
 )
 
 ADOBE_PHOTOSHOP=(
 PHOTOSHOP
 "https://localweb.cns.nyu.edu/mac/.local/photoshop.tgz"
 photoshop.tgz
-mac-photoshop-fall18
-mac-photoshop-fall18_Install.pkg
+photoshop
+photoshop-2019_Install.pkg
 photoshop.pkg
 )
 
@@ -154,7 +152,7 @@ install_installer() {
 remove_installer() {
   printf "%s\\n" "REMOVING $3..."
 
-  rm -rv /Applications/{"$3","$4","$6"}
+  rm -rv /Applications/{"$3","$4"}
 }
 
 # Wrapper functions
