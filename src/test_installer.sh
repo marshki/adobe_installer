@@ -24,7 +24,7 @@ ADOBE_ILLUSTRATOR=(
 ILLUSTRATOR
 "https://localweb.cns.nyu.edu/mac/.local/illustrator.tgz" 
 illustrator.tgz
-illustator
+illustrator
 illustrator-2019_Install.pkg
 )
 
@@ -34,7 +34,6 @@ PHOTOSHOP
 photoshop.tgz
 photoshop
 photoshop-2019_Install.pkg
-photoshop.pkg
 )
 
 #==============
