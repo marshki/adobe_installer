@@ -5,7 +5,7 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) 
 
-Bash script to retrieve, unzip, install, and cleanup a subset of [Adobe's Creative Cloud](https://www.adobe.com/creativecloud.html?promoid=NGWGRLB2&mv=other) software.
+Bash script to retrieve, unzip, install, and cleanup a subset of [Adobe's Creative Cloud](https://www.adobe.com/creativecloud.html?promoid=NGWGRLB2&mv=other) software. There's also a serializer script, which, while no longer required, is included for archival purposes.
 
 Open to members of New York University's: [Center for Brain Imaging](http://cbi.nyu.edu), [Center for Neural Science](http://www.cns.nyu.edu), 
 and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the Meyer network. 
@@ -29,7 +29,7 @@ Shared-device licesning (SDL) requires a valid NYU Net ID for authentication.**
 
 - [ ] have an Adboe installer for `Mac OS X' clients.
 
-On your local client, zip up the Adobe installer with, e.g.: 
+On your local client, compress the Adobe installer with, e.g.: 
 
 `zip -r mac-acrobatdc-spr18.zip acrobat`
 
@@ -56,7 +56,7 @@ Grab the script from `/src` in this repository, then call the script (*[caffeina
 ![ALT text](https://github.com/marshki/adobe_installer/blob/master/docs/adobe_install_menu.png "menu"). 
 
 ## History 
-v.0.4 2019.06.08
+v.0.5 2019.12.10
 
 ## License 
 [License](https://github.com/marshki/adobe_installer/blob/master/LICENSE)
