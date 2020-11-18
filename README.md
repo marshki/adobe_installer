@@ -11,7 +11,7 @@ Bash script to retrieve, unzip, install, and cleanup a subset of [Adobe's Creati
 Open to members of New York University's: [Center for Brain Imaging](http://cbi.nyu.edu), [Center for Neural Science](http://www.cns.nyu.edu), 
 and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the Meyer network. 
 
-Written and tested to run on currently-supported versions of Mac OS X. 
+Written and tested to run on currently-supported versions of macOS. 
 
 **On 11.30.2019, NYU transitioned from serialized licensing to a subscription-based licensing model. 
 Shared-device licesning (SDL) requires a valid NYU Net ID for authentication.**
@@ -28,7 +28,7 @@ Shared-device licesning (SDL) requires a valid NYU Net ID for authentication.**
 
 - [ ] can access a networked file server; and 
 
-- [ ] have an Adboe installer for `Mac OS X' clients.
+- [ ] have an Adboe installer for `macOS' clients.
 
 On your local client, compress the Adobe installer with, e.g.: 
 
