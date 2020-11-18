@@ -2,7 +2,7 @@
 # mjk235 [at] nyu [dot] edu --2019.12.10
 
 #====================================================
-# Adobe install & serialize on OS X.       	         
+# Adobe install & serialize on macOS.       	         
 # Requires: Root privileges; access to Meyer network; 
 # and adequate free disk space.                        
 #====================================================
