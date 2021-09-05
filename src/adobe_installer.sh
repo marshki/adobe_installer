@@ -1,9 +1,15 @@
-#!/bin/bash
-# mjk235 [at] nyu [dot] edu --2019.12.10
+#!/usr/bin/env bash
+#
+# adobe_installer
+#
+# Adobe installation and serialization on macOS.
+#
+# Author: M. Krinitz <mjk235 [at] nyu [dot] edu>
+# Date: 2019-12-10
+# License: MIT
 
 #====================================================
-# Adobe install & serialize on macOS.       	         
-# Requires: Root privileges; access to Meyer network; 
+# Prereqs: Root privileges; access to Meyer network; 
 # and adequate free disk space.                        
 #====================================================
 
