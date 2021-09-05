@@ -1,5 +1,12 @@
-#!/bin/bash
-# mjk235 [at] nyu [dot] edu
+#!/usr/bin/env bash
+#
+# adobe_cereal
+#
+# Serialize (activate) Adobe installation.
+#
+# Author: M. Krinitz <mjk235 [at] nyu [dot] edu>
+# Date: 2019-12-10
+# License: MIT
 
 #=================
 # Adobe Serializer 
